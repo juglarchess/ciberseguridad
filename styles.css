@@ -1620,7 +1620,7 @@ body {
 @media (max-width: 768px) {
     /* 1. Ajustar contenedores de secciones y detalles */
     .topics-detail-section {
-        padding: 1.5rem 0.5rem !important;
+        padding: 1rem 0.5rem !important;
     }
     
     .topics-detail-section .section-container {
@@ -1640,24 +1640,40 @@ body {
 
     /* 2. Ajustar la sección y contenedor del cuestionario */
     .quiz-section {
-        padding: 1.5rem 0.5rem !important;
+        padding: 1rem 0.5rem !important;
     }
     
     .quiz-container {
         max-width: 100% !important;
-        padding: 1rem !important;
+        padding: 1.2rem !important; /* Restauramos un padding interno seguro */
         border-radius: 8px !important;
         margin: 0 0.5rem !important;
     }
 
     .question-card {
-        padding: 1rem !important;
+        padding: 1.2rem !important;
+        width: 100% !important;
     }
 
-    /* 3. Ajustar márgenes generales de las secciones principales */
+    /* 3. Forzar que la cabecera de la pregunta se acomode en vertical para que no se corte el texto */
+    .question-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .question-title {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    .points-badge {
+        align-self: flex-start !important;
+    }
+
+    /* 4. Ajustar márgenes generales de las secciones principales */
     .section-container, .teachers-container, .convenios-container {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
 }
-        
