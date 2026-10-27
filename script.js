@@ -1,10 +1,38 @@
-/* 
+/*  
   ====================================================================
   CONTROL DE ACCESO, CARRUSEL DE DOCENTES Y FORMULARIOS - CBTis 166
-  ==================================================================== 
+  ====================================================================  
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // 0. Lógica del Menú de Hamburguesa Responsive
+    const hamburgerToggle = document.getElementById('hamburger-toggle');
+    const navLinksMenu = document.getElementById('nav-links-menu');
+
+    if (hamburgerToggle && navLinksMenu) {
+        hamburgerToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinksMenu.classList.toggle('active');
+            hamburgerToggle.textContent = navLinksMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Ocultar menú al hacer clic en cualquier enlace (en móviles)
+        navLinksMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksMenu.classList.remove('active');
+                hamburgerToggle.textContent = '☰';
+            });
+        });
+
+        // Ocultar el menú si se hace clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (!navLinksMenu.contains(e.target) && !hamburgerToggle.contains(e.target)) {
+                navLinksMenu.classList.remove('active');
+                hamburgerToggle.textContent = '☰';
+            }
+        });
+    }
 
     // 1. Lógica del Formulario de Login (Alumnos)
     const formularioLogin = document.getElementById('form-login');
@@ -25,14 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnPrev && btnNext && teachersTrack) {
         
-        // Función para calcular el ancho de desplazamiento al hacer clic en las flechas
         const getScrollAmount = () => {
             const card = teachersTrack.querySelector('.teacher-card');
             if (!card) return 320;
-            return card.offsetWidth + 24; // Ancho de la tarjeta + la separación (gap)
+            return card.offsetWidth + 24;
         };
 
-        // Evento para el botón derecho (siguiente)
         btnNext.addEventListener('click', () => {
             teachersTrack.scrollBy({
                 left: getScrollAmount(),
@@ -40,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Evento para el botón izquierdo (anterior)
         btnPrev.addEventListener('click', () => {
             teachersTrack.scrollBy({
                 left: -getScrollAmount(),
@@ -48,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // --- ARRASTRE SUAVE CON EL MOUSE ---
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -57,20 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
             isDown = true;
             startX = e.pageX - teachersTrack.offsetLeft;
             scrollLeft = teachersTrack.scrollLeft;
-            teachersTrack.style.scrollBehavior = 'auto'; // Desactiva el smooth temporalmente para respuesta inmediata con el mouse
+            teachersTrack.style.scrollBehavior = 'auto';
         });
 
         window.addEventListener('mouseup', () => {
             if (!isDown) return;
             isDown = false;
-            teachersTrack.style.scrollBehavior = 'smooth'; // Restaura el desplazamiento suave
+            teachersTrack.style.scrollBehavior = 'smooth';
         });
 
         window.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - teachersTrack.offsetLeft;
-            const walk = (x - startX) * 1.5; // Velocidad de arrastre proporcional
+            const walk = (x - startX) * 1.5;
             teachersTrack.scrollLeft = scrollLeft - walk;
         });
     }
@@ -87,85 +111,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-});
+    // Lógica para el Carrusel de la Sesión 3 (Temas)
+    const btnPrevS3 = document.getElementById('btn-prev-sesion3');
+    const btnNextS3 = document.getElementById('btn-next-sesion3');
+    const sesion3Track = document.getElementById('sesion3-track');
 
-// Lógica para el Carrusel de la Sesión 3 (Temas)
-const btnPrevS3 = document.getElementById('btn-prev-sesion3');
-const btnNextS3 = document.getElementById('btn-next-sesion3');
-const sesion3Track = document.getElementById('sesion3-track');
+    if (btnPrevS3 && btnNextS3 && sesion3Track) {
+        const getScrollAmountS3 = () => {
+            const card = sesion3Track.querySelector('.teacher-card');
+            if (!card) return 320;
+            return card.offsetWidth + 24;
+        };
 
-if (btnPrevS3 && btnNextS3 && sesion3Track) {
-    
-    const getScrollAmountS3 = () => {
-        const card = sesion3Track.querySelector('.teacher-card');
-        if (!card) return 320;
-        return card.offsetWidth + 24; // Ancho de tarjeta + espacio
-    };
-
-    btnNextS3.addEventListener('click', () => {
-        sesion3Track.scrollBy({ left: getScrollAmountS3(), behavior: 'smooth' });
-    });
-
-    btnPrevS3.addEventListener('click', () => {
-        sesion3Track.scrollBy({ left: -getScrollAmountS3(), behavior: 'smooth' });
-    });
-
-    // Arrastre con el mouse o pantalla táctil
-    let isDownS3 = false;
-    let startXS3;
-    let scrollLeftS3;
-
-    sesion3Track.addEventListener('mousedown', (e) => {
-        isDownS3 = true;
-        startXS3 = e.pageX - sesion3Track.offsetLeft;
-        scrollLeftS3 = sesion3Track.scrollLeft;
-        sesion3Track.style.scrollBehavior = 'auto';
-    });
-
-    window.addEventListener('mouseup', () => {
-        if (!isDownS3) return;
-        isDownS3 = false;
-        sesion3Track.style.scrollBehavior = 'smooth';
-    });
-
-    window.addEventListener('mousemove', (e) => {
-        if (!isDownS3) return;
-        e.preventDefault();
-        const x = e.pageX - sesion3Track.offsetLeft;
-        const walk = (x - startXS3) * 1.5;
-        sesion3Track.scrollLeft = scrollLeftS3 - walk;
-    });
-}
-
-        // Lógica para desplazarse al tema correspondiente al hacer clic en una tarjeta
-        function scrollToDetail(themeId) {
-            const targetElement = document.getElementById(themeId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Lógica para abrir y cerrar el modal de la imagen
-        function openModal(src) {
-            const modal = document.getElementById('imageModal');
-            const expandedImg = document.getElementById('imgExpanded');
-            expandedImg.src = src;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('active');
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-            }
+        btnNextS3.addEventListener('click', () => {
+            sesion3Track.scrollBy({ left: getScrollAmountS3(), behavior: 'smooth' });
         });
 
-        // Lógica de evaluación del cuestionario
-        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+        btnPrevS3.addEventListener('click', () => {
+            sesion3Track.scrollBy({ left: -getScrollAmountS3(), behavior: 'smooth' });
+        });
+
+        let isDownS3 = false;
+        let startXS3;
+        let scrollLeftS3;
+
+        sesion3Track.addEventListener('mousedown', (e) => {
+            isDownS3 = true;
+            startXS3 = e.pageX - sesion3Track.offsetLeft;
+            scrollLeftS3 = sesion3Track.scrollLeft;
+            sesion3Track.style.scrollBehavior = 'auto';
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDownS3) return;
+            isDownS3 = false;
+            sesion3Track.style.scrollBehavior = 'smooth';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDownS3) return;
+            e.preventDefault();
+            const x = e.pageX - sesion3Track.offsetLeft;
+            const walk = (x - startXS3) * 1.5;
+            sesion3Track.scrollLeft = scrollLeftS3 - walk;
+        });
+    }
+
+    // Lógica de evaluación del cuestionario
+    const quizForm = document.getElementById('quiz-form');
+    if (quizForm) {
+        quizForm.addEventListener('submit', function(e) {
             e.preventDefault();
             let totalScore = 0;
             const formData = new FormData(this);
@@ -202,4 +197,36 @@ if (btnPrevS3 && btnNextS3 && sesion3Track) {
             resultsDiv.style.display = 'block';
             resultsDiv.scrollIntoView({ behavior: 'smooth' });
         });
-  
+    }
+
+});
+
+// Funciones globales (fuera de DOMContentLoaded para que se puedan llamar desde el HTML onclick)
+function scrollToDetail(themeId) {
+    const targetElement = document.getElementById(themeId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const expandedImg = document.getElementById('imgExpanded');
+    if (modal && expandedImg) {
+        expandedImg.src = src;
+        modal.classList.add('active');
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
