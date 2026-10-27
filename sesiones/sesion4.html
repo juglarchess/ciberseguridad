@@ -7,11 +7,23 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+        <!-- BARRA DE NAVEGACIÓN - SESIONES -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="nav-brand"><a href="../index.html#inicio"><img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img"></a></div>
-            <nav class="nav-links">
-                <a href="../index.html#temario">← Volver al Temario</a>
+            <div class="nav-brand">
+                <a href="../index.html">
+                    <img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img">
+                </a>
+            </div>
+            
+            <!-- Botón de Hamburguesa para Sesiones -->
+            <button class="hamburger-btn" id="hamburger-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <nav class="nav-links" id="nav-links-menu">
+                <a href="../index.html">← Volver al Inicio</a>
+                <a href="../index.html#temario">Ver más Temas</a>
                 <a href="../login.html" class="btn-nav-login">Acceso Portal</a>
             </nav>
         </div>
