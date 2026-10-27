@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 4: Mal Uso de Internet - CBTis 166</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="../index.html#inicio"><img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img"></a></div>
+            <nav class="nav-links">
+                <a href="../index.html#temario">← Volver al Temario</a>
+                <a href="login.html" class="btn-nav-login">Acceso Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-text-side">
+                <span class="hero-tag">SESIÓN 4</span>
+                <h1>Mal Uso de Internet y Amenazas Digitales</h1>
+                <p>Conoce los riesgos del entorno digital, desde correos maliciosos, fake news y fraude electrónico, hasta tácticas de Phishing, Vishing, Smishing, malware y conductas antisociales.</p>
+                <a href="#cuestionario" class="btn-go-quiz">Contestar Cuestionario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARRUSEL CON TARJETAS REDIRECCIONABLES (Adaptado al ID sesion3-track que reconoce tu JS) -->
+    <section class="teachers-section" style="background: transparent;">
+        <div class="teachers-container">
+            
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">TEMARIO SESIÓN 4</span>
+                    <h2 style="color: #0f172a;">Temas del Mal Uso de Internet</h2>
+                    <p style="color: #64748b;">Utiliza las flechas o desliza con el dedo/mouse para recorrer los 10 temas. Da clic para ir al tema.</p>
+                </div>
+                <!-- Botones usando el patrón de la Sesión 3 que sí lee tu JS -->
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">‹</button>
+                    <button id="btn-next-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">›</button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Carrusel usando sesion3-track para aprovechar la lógica existente en tu JS -->
+            <div class="teachers-grid" id="sesion3-track">
+
+                <!-- 1. Correos maliciosos -->
+                <div class="teacher-card" onclick="scrollToDetail('tema1')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Correos maliciosos">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">1. Correos maliciosos</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Mensajes diseñados para engañar al receptor y obtener información sensible o dinero disfrazándose de entidades legítimas.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Ejemplos de correos falsos -->
+                <div class="teacher-card" onclick="scrollToDetail('tema2')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=600&q=80" alt="Ejemplos de correos falsos">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">2. Phishing y premios falsos</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Conoce los tipos más habituales como la suplantación de identidad para robo de contraseñas y falsos premios.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Falsos vs Spam -->
+                <div class="teacher-card" onclick="scrollToDetail('tema3')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=600&q=80" alt="Falsos vs Spam">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">3. Correos falsos vs. Spam</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Diferencias clave entre correos fraudulentos enfocados en estafar y el correo no solicitado publicitario (spam).</p>
+                    </div>
+                </div>
+
+                <!-- 4. Cómo identificar un correo falso -->
+                <div class="teacher-card" onclick="scrollToDetail('tema4')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Identificar correos falsos">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">4. Identificar correos falsos</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Señales de alerta: revisar remitente, errores gramaticales, solicitudes de actualización y enlaces sospechosos.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Fake News -->
+                <div class="teacher-card" onclick="scrollToDetail('tema5')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=600&q=80" alt="Fake News">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">5. Fake News e información</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Anuncios sensacionalistas en redes sociales creados para manipular emociones, generar clics y difundir virus.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Por qué existen noticias falsas -->
+                <div class="teacher-card" onclick="scrollToDetail('tema6')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Por qué existen noticias falsas">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">6. Interés económico y social</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">El negocio lucrativo detrás de la desinformación masiva y su impacto en situaciones de crisis.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Fraude electrónico -->
+                <div class="teacher-card" onclick="scrollToDetail('tema7')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1556742049-0a67d553c2a5?auto=format&fit=crop&w=600&q=80" alt="Fraude electrónico">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">7. Fraude electrónico</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Uso de servicios en línea para estafar, robar identidades y cometer delitos informáticos millonarios.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Tipos de fraude en internet -->
+                <div class="teacher-card" onclick="scrollToDetail('tema8')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Tipos de fraude">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">8. Tipos de fraude en red</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Desde filtración de información y DoS hasta ransomware y compromiso de correo comercial (BEC).</p>
+                    </div>
+                </div>
+
+                <!-- 9. Phishing, Vishing y Smishing -->
+                <div class="teacher-card" onclick="scrollToDetail('tema9')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1534536281715-e28d76684b4d?auto=format&fit=crop&w=600&q=80" alt="Phishing Vishing Smishing">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">9. Phishing, Vishing y Smishing</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Variantes de suplantación por correo, llamadas telefónicas y mensajes SMS, además de cartas nigerianas.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Malware y Código Malicioso -->
+                <div class="teacher-card" onclick="scrollToDetail('tema10')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px; cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Malware y Código Malicioso">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">10. Malware y buenas prácticas</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Aprende sobre código malicioso, conductas delictivas y cómo practicar una navegación segura en internet.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DESGLOSE COMPLETO CON ID PARA NAVEGACIÓN -->
+    <section class="topics-detail-section">
+        <div class="section-container" style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem;">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2>Desarrollo Detallado de los Temas</h2>
+                <p>Haz clic sobre cualquier imagen para verla en tamaño completo</p>
+            </div>
+
+            <!-- Tema 1 -->
+            <div class="detail-card" id="tema1">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="1. Correos maliciosos">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>1. ¿Qué es un correo falso o fraudulento?</h2>
+                    <p>Se denomina email falso o correo malicioso a aquel que es enviado con la intención de engañar al receptor para obtener información sensible o dinero de manera ilícita. El gran problema es que estos correos suelen disfrazarse de comunicaciones legítimas de empresas o instituciones plenamente fiables, como entidades bancarias, aseguradoras o plataformas de redes sociales.</p>
+                    <p>Saber identificar este tipo de estafa por correo es importante para proteger nuestra identidad digital y nuestros recursos financieros, ya que nos evitará caer en posibles trampas que pueden llegar a tener consecuencias absolutamente devastadoras.</p>
+                </div>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="detail-card" id="tema2">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=600&q=80" alt="2. Ejemplos de correos falsos">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>2. Ejemplos de correos falsos</h2>
+                    <p>Existen muchas clases de mensajes de correo falsos, pero los siguientes son dos de los más habituales:</p>
+                    <ul>
+                        <li><strong>Phishing:</strong> Diseñados para obtener información sensible como contraseñas y detalles de tarjetas de crédito, simulando provenir de una entidad 100% fiable.</li>
+                        <li><strong>Correos de premios falsos:</strong> Mensajes que nos informan de que hemos ganado un premio y nos solicitan información personal o incluso un pago para poder acceder a él.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="detail-card" id="tema3">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=600&q=80" alt="3. Diferencia entre correos falsos, fraudulentos y spam">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>3. Diferencia entre correos falsos, fraudulentos y spam</h2>
+                    <p>Los correos falsos y fraudulentos están diseñados específicamente para engañar y obtener beneficios ilícitos, mientras que los mensajes de spam son simplemente correos electrónicos no solicitados, generalmente con fines publicitarios, que no necesariamente buscan defraudar.</p>
+                </div>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="detail-card" id="tema4">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="4. Cómo identificar un correo electrónico falso">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>4. Cómo identificar un correo electrónico falso</h2>
+                    <p>Para saber si un correo es falso, debes estar atento a los siguientes detalles:</p>
+                    <ul>
+                        <li>Confirmar si la dirección de correo electrónico remitente coincide con la entidad que afirma ser.</li>
+                        <li>Los mensajes fraudulentos suelen contener errores gramaticales que las entidades oficiales nunca incluirían en un mensaje para sus clientes.</li>
+                        <li>Desconfiar de correos que requieran hacer actualizaciones de datos, verificar cuentas o que soliciten contraseñas privadas.</li>
+                        <li>Evitar hacer clic en enlaces o descargar archivos de correos electrónicos sospechosos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="detail-card" id="tema5">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=600&q=80" alt="5. Mal uso de la información o Fake News">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>5. Mal uso de la información o Fake News</h2>
+                    <p>Se trata de historias o anuncios sensacionalistas, compartidos usualmente por redes sociales para involucrar emocionalmente a los lectores, generar atención y llevar a sus creadores a obtener rentabilidad por clics y viralización.</p>
+                    <p>También tienen como propósito desprestigiar a personajes públicos u organizaciones; o convencer a las personas para que descarguen archivos adjuntos o den clic en links que descargan o instalan virus informáticos para robar información financiera, datos personales, usuarios y contraseñas.</p>
+                </div>
+            </div>
+
+            <!-- Tema 6 -->
+            <div class="detail-card" id="tema6">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="6. ¿Por qué existen noticias falsas?">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>6. ¿Por qué existen noticias falsas?</h2>
+                    <p>Aunque parezca exagerado, detrás de esta práctica hay un interés económico claro. De acuerdo con el medio internacional BBC, plataformas de noticias falsas han llegado a recaudar sumas considerables por una sola noticia. La generación de clics por contenido compartido de alto impacto termina siendo lucrativa para ciberdelincuentes.</p>
+                    <p>Otra de las motivaciones es minimizar los esfuerzos que se realizan desde el Estado, generando confusión en el manejo de situaciones críticas y motivando a las personas a dar clic en enlaces maliciosos mediante contenido sensacionalista.</p>
+                </div>
+            </div>
+
+            <!-- Tema 7 -->
+            <div class="detail-card" id="tema7">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1556742049-0a67d553c2a5?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1556742049-0a67d553c2a5?auto=format&fit=crop&w=600&q=80" alt="7. Fraude Electrónico">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>7. Fraude Electrónico en Internet</h2>
+                    <p>El fraude por Internet implica el uso de servicios y software en línea con acceso a Internet para estafar o aprovecharse de las víctimas. El término cubre la actividad de cibercrimen llevada a cabo a través de la red o correo electrónico, incluidos robos de identidad, suplantación y piratería informática.</p>
+                    <p>Estas estafas representan millones de dólares en pérdidas anuales y las cifras continúan aumentando a medida que se expande el uso de Internet y las técnicas se vuelven más sofisticadas.</p>
+                </div>
+            </div>
+
+            <!-- Tema 8 -->
+            <div class="detail-card" id="tema8">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="8. Tipos de fraude en Internet">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>8. Tipos de fraude en Internet</h2>
+                    <p>Los delincuentes utilizan diversos vectores de ataque:</p>
+                    <ul>
+                        <li><strong>Suplantación de identidad:</strong> Uso de correo y mensajería para engañar a las víctimas compartiendo credenciales y datos financieros.</li>
+                        <li><strong>Filtración de información:</strong> Robar datos confidenciales desde una ubicación segura hacia un entorno no confiable.</li>
+                        <li><strong>Denegación de servicio (DoS):</strong> Interrumpir el acceso del tráfico a un servicio, sistema o red en línea.</li>
+                        <li><strong>Malware y Ransomware:</strong> Software para dañar dispositivos o cifrar datos exigiendo un pago económico.</li>
+                        <li><strong>Compromiso de correo electrónico comercial (BEC):</strong> Ataque sofisticado dirigido a empresas para comprometer cuentas legítimas y desviar transferencias mediante ingeniería social.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tema 9 -->
+            <div class="detail-card" id="tema9">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1534536281715-e28d76684b4d?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1534536281715-e28d76684b4d?auto=format&fit=crop&w=600&q=80" alt="9. Phishing, Vishing y Smishing">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>9. Phishing, Vishing, Smishing y Estafas Clásicas</h2>
+                    <p>Las estafas de suplantación están en constante evolución:</p>
+                    <ul>
+                        <li><strong>Phishing:</strong> Correos electrónicos que imitan a personas de confianza para llevar a sitios web falsificados o adjuntos maliciosos.</li>
+                        <li><strong>Vishing y Smishing:</strong> Variantes de estafa a través de llamadas telefónicas (Vishing) y mensajes SMS (Smishing).</li>
+                        <li><strong>Estafas clásicas:</strong> Tarjetas de saludo falsas, tarjetas de crédito, citas en línea, fraude en la tarifa de lotería y la clásica carta del "príncipe nigeriano".</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tema 10 -->
+            <div class="detail-card" id="tema10">
+                <div class="detail-img-container" onclick="openModal('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="10. Malware y Código Malicioso">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>10. Malware, Código Malicioso y Conductas Antisociales</h2>
+                    <p>Módulo de aprendizaje sobre el internet y sus amenazas, enfocado en cómo realizar buenas prácticas en la red y prevenir conductas delictivas. El malware representa programas diseñados para infiltrarse y comprometer la seguridad de los equipos y la información personal.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CUESTIONARIO AUTOEVALUABLE -->
+    <section class="quiz-section" id="cuestionario" style="background: #e2e8f0; padding: 5rem 1.5rem;">
+        <div class="quiz-container" style="max-width: 900px; margin: 0 auto; background: #ffffff; padding: 2.5rem; border-radius: 1rem; border: 1px solid #cbd5e1;">
+            <div class="quiz-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2>Cuestionario Autoevaluable: Sesión 4 (Unidad III)</h2>
+                <p>Pon a prueba tus conocimientos sobre correos falsos, fake news, fraude electrónico y malware.</p>
+            </div>
+
+            <form id="quiz-form">
+                <!-- Pregunta 1 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">1. ¿Cuál es el propósito principal de un correo malicioso o fraudulento?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p1" value="0"> Enviar felicitaciones institucionales de manera masiva.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p1" value="10"> Engañar al receptor para obtener información sensible o dinero de forma ilícita.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p1" value="0"> Actualizar los sistemas operativos de las computadoras escolares.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">2. ¿Qué diferencia principal existe entre un correo fraudulento y un mensaje de Spam?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p2" value="10"> El spam es publicidad no solicitada que no necesariamente busca defraudar, a diferencia de los correos fraudulentos.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p2" value="0"> El spam siempre contiene virus de tipo ransomware y el correo falso no.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p2" value="0"> No existe ninguna diferencia técnica entre ambos.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">3. ¿Qué objetivos persiguen las "Fake News" o noticias falsas en internet?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p3" value="0"> Informar con veracidad y rigor periodístico sobre eventos científicos.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p3" value="10"> Obtener rentabilidad por clics, desprestigiar organizaciones y propagar enlaces maliciosos.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p3" value="0"> Reducir el tráfico en las redes sociales institucionales.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">4. ¿Cómo se define el fraude electrónico por Internet?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p4" value="10"> El uso de servicios en línea y software para estafar, robar identidades y cometer delitos financieros.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p4" value="0"> Comprar equipo de cómputo en tiendas virtuales oficiales.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p4" value="0"> El envío de correos electrónicos con tareas escolares.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">5. ¿Qué término se utiliza para referirse al fraude de suplantación de identidad a través de llamadas telefónicas?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p5" value="0"> Phishing</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p5" value="0"> Smishing</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p5" value="10"> Vishing</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">6. ¿Qué es el Ransomware dentro del ecosistema del malware?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p6" value="10"> Un software malicioso que cifra datos críticos y exige un rescate financiero para restaurar el acceso.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p6" value="0"> Un programa antivirus gratuito para proteger carpetas compartidas.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p6" value="0"> Una herramienta de optimización de redes institucionales.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">7. ¿Qué caracteriza a un ataque de Compromiso de Correo Electrónico Comercial (BEC)?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p7" value="0"> Enviar publicidad a los profesores del plantel.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p7" value="10"> Comprometer cuentas legítimas de correo mediante ingeniería social para desviar pagos y transferencias corporativas.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p7" value="0"> Bloquear el servidor de correos mediante una denegación de servicio DoS.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">8. ¿Cuál es una señal de alerta para identificar un correo electrónico falso?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p8" value="10"> Errores gramaticales, direcciones de remitente sospechosas y solicitudes urgentes de datos personales.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p8" value="0"> Que el correo provenga del dominio oficial de la institución educativa.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p8" value="0"> Que no incluya ningún enlace ni archivo adjunto.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 9 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">9. ¿En qué consiste el Smishing?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p9" value="0"> Estafas financieras realizadas mediante cartas impresas y correo postal.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p9" value="10"> Enviar mensajes de texto (SMS) fraudulentos para que el usuario acceda a enlaces maliciosos.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p9" value="0"> Ataques de denegación de servicio en páginas web gubernamentales.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 10 -->
+                <div class="question-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="question-title" style="color: #1e293b; font-weight: 600;">10. ¿Cuál ése el objetivo principal de estudiar las amenazas de la Unidad III sobre el mal uso de internet?</span>
+                        <span class="points-badge" style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">10 puntos</span>
+                    </div>
+                    <div class="options-group" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p10" value="0"> Aprender a programar páginas web comerciales.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p10" value="10"> Conocer las amenazas digitales, fomentar buenas prácticas y prevenir conductas delictivas en la red.</label>
+                        <label class="option-label" style="display: flex; gap: 0.75rem; background: #fff; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; cursor: pointer;"><input type="radio" name="p10" value="0"> Diseñar campañas de marketing digital para redes sociales.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-quiz" style="display: block; width: 100%; background: #0f172a; color: #fff; padding: 1rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Calcular Evaluación</button>
+            </form>
+
+            <div id="quiz-results" class="quiz-results" style="display: none; margin-top: 2rem; text-align: center; padding: 1.5rem; border-radius: 0.5rem;">
+                <h3 id="score-text">Puntaje: 0 / 100</h3>
+                <p id="feedback-text">Has completado la autoevaluación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE IMAGEN AGRANDADA (Corregido para forzar display flex al abrirse) -->
+     <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgExpanded" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Script para corregir al instante el despliegue del modal de imagen que tu JS activa mediante clase -->
+   
+    <script src="../script.js"></script>
+</body>
+</html>

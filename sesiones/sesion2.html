@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 2: Ciberseguridad Avanzada - CBTis 166</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="../index.html#inicio"><img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img"></a></div>
+            <nav class="nav-links">
+                <a href="../index.html#temario">← Volver al Temario</a>
+                <a href="login.html" class="btn-nav-login">Acceso Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-text-side">
+                <span class="hero-tag">SESIÓN 2 • CIBERSEGURIDAD AVANZADA</span>
+                <h1>Manual de Supervivencia en la Jungla Digital</h1>
+                <p>Guía Práctica e Interactiva para Docentes Exploradores del CBTis 166. Domina la ingeniería social, las amenazas de IA, los protocolos de defensa y la seguridad institucional.</p>
+                <a href="#cuestionario" class="btn-go-quiz">Ir al Cuestionario de Evaluación</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARRUSEL CON LÓGICA E ID COMPARTIDOS -->
+    <section class="teachers-section" style="background: transparent;">
+        <div class="teachers-container">
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">TEMARIO SESIÓN 2</span>
+                    <h2 style="color: #0f172a;">Temas de Ciberseguridad Avanzada</h2>
+                    <p style="color: #64748b;">Utiliza las flechas o desliza con el dedo/mouse para recorrer los temas. Da clic para ir al detalle.</p>
+                </div>
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">‹</button>
+                    <button id="btn-next-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">›</button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Carrusel -->
+            <div class="teachers-grid" id="sesion3-track">
+
+                <!-- 1. Ingeniería Social y Phishing -->
+                <div class="teacher-card" onclick="scrollToDetail('tema1')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Ingeniería Social">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">1. El Arte del Engaño</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Ingeniería social, phishing y manipulación psicológica en el entorno escolar.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Bestias Silenciosas -->
+                <div class="teacher-card" onclick="scrollToDetail('tema2')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Bestias Silenciosas">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">2. El Secuestrador y el Espía</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Amenazas de Ransomware y Caballos de Troya ocultos en archivos cotidianos.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Trampas Invisibles -->
+                <div class="teacher-card" onclick="scrollToDetail('tema3')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Trampas Invisibles">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">3. Trampas Invisibles</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Ataques Drive-by, túneles DNS y errores críticos de configuración.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Amenazas de IA -->
+                <div class="teacher-card" onclick="scrollToDetail('tema4')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Amenazas de IA">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">4. Amenazas de Inteligencia Artificial</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Phishing automatizado, malware autónomo y evasión de antivirus tradicionales.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Protegiendo a la Manada -->
+                <div class="teacher-card" onclick="scrollToDetail('tema5')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Protegiendo a la Manada">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">5. Riesgos para tus Alumnos</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Depredadores en línea, robo de identidad juvenil y vulnerabilidades móviles.</p>
+                    </div>
+                </div>
+
+                <!-- 6. El Riesgo en el Espejo -->
+                <div class="teacher-card" onclick="scrollToDetail('tema6')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Riesgo en el Espejo">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">6. Vulnerabilidades Internas</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Amenazas internas por negligencia y riesgos en la cadena de suministro.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Matriz de Diagnóstico -->
+                <div class="teacher-card" onclick="scrollToDetail('tema7')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Matriz de Diagnóstico">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">7. Matriz de Diagnóstico</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Evalúa tu higiene cibernética entre nivel de riesgo y nivel experto.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Kit de Supervivencia -->
+                <div class="teacher-card" onclick="scrollToDetail('tema8')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s2_kit.jpeg" alt="Kit de Supervivencia">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">8. Kit de Supervivencia</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Los 4 pilares esenciales: MFA, vacunas digitales, VPN y destrucción segura.</p>
+                    </div>
+                </div>
+
+                <!-- 9. La Muralla de la Institución -->
+                <div class="teacher-card" onclick="scrollToDetail('tema9')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80" alt="La Muralla de la Institución">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">9. Defensas a Gran Escala</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Backups, cifrado, firewalls, IDS/IPS y planes de respuesta institucional.</p>
+                    </div>
+                </div>
+
+                <!-- 10. SentinelOne -->
+                <div class="teacher-card" onclick="scrollToDetail('tema10')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="SentinelOne">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">10. SentinelOne y Ecosistema</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Inteligencia artificial defensiva y neutralización autónoma en puntos finales.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DESGLOSE COMPLETO TEMA POR TEMA -->
+    <section class="topics-detail-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Desarrollo Detallado de los Temas</h2>
+                <p>Haz clic sobre cualquier imagen para verla en tamaño completo</p>
+            </div>
+
+            <!-- Tema 1 -->
+            <div class="detail-card" id="tema1">
+                <div class="detail-content">
+                    <h2>1. El Arte del Engaño: Ingeniería Social y Phishing</h2>
+                    <p>Los hackers ya no solo rompen códigos complejos; manipulan la psicología humana. Usan pretextos sofisticados para que tú mismo les entregues las llaves de acceso.</p>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Ejemplo Escolar y Reflexión:</h3>
+                            <ul>
+                                <li><strong>El Anzuelo Psicológico:</strong> Recibes un correo "urgente" aparente del Director: <em>"Profesor, valide su contraseña aquí o su cuenta de correo escolar será suspendida en 1 hora"</em>.</li>
+                                <li><strong>La Trampa:</strong> Al ingresar tus datos, los cibercriminales toman el control absoluto de tu cuenta institucional.</li>
+                                <li><strong>Prevención:</strong> Las instituciones educativas reales nunca te pedirán verificar contraseñas o datos confidenciales por correo electrónico.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Ingeniería Social">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="detail-card" id="tema2">
+                <div class="detail-content">
+                    <h2>2. Bestias Silenciosas: El Secuestrador y el Espía</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Amenazas Principales:</h3>
+                            <ul>
+                                <li><strong>El Secuestrador (Ransomware):</strong> Secuestra tus datos cifrándolos por completo y exige un pago de rescate para devolverte el acceso. Catastrófico si no existen respaldos offline.</li>
+                                <li><strong>El Espía (Caballo de Troya):</strong> Software que aparenta ser inofensivo (como un PDF de "Nuevas Políticas del Ciclo Escolar") y abre puertas traseras para robo de información.</li>
+                                <li><em>Dato Clave:</em> Los atacantes realizan un reconocimiento profundo antes de lanzar ransomware para maximizar el daño.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Bestias Silenciosas">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="detail-card" id="tema3">
+                <div class="detail-content">
+                    <h2>3. Trampas Invisibles: Peligro en Silencio</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Vectores Ocultos:</h3>
+                            <ul>
+                                <li><strong>Ataque "Drive-by":</strong> Descargas malware sin saberlo al visitar un sitio web infectado que explota vulnerabilidades del navegador, sin necesidad de clics directos.</li>
+                                <li><strong>Túnel DNS:</strong> Ocultación de datos robados dentro del tráfico normal de internet (DNS), como sacar información escolar oculta entre mochilas.</li>
+                                <li><strong>Errores de Configuración:</strong> Dejar contraseñas predeterminadas de fábrica o archivos de alumnos configurados como "públicos" en la nube.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Trampas Invisibles">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="detail-card" id="tema4">
+                <div class="detail-content">
+                    <h2>4. La Nueva Evolución: Amenazas de Inteligencia Artificial</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <p>La Inteligencia Artificial está plenamente en manos de los cibercriminales para amplificar su efectividad:</p>
+                            <ul>
+                                <li>Campañas masivas de phishing automatizadas y ultra-personalizadas, completamente libres de errores ortográficos.</li>
+                                <li>Malware autónomo capaz de aprender de su entorno.</li>
+                                <li>Código malicioso que se adapta en tiempo real para evadir las firmas de antivirus tradicionales.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Amenazas de IA">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="detail-card" id="tema5">
+                <div class="detail-content">
+                    <h2>5. Protegiendo a la Manada: Riesgos para tus Alumnos</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <ul>
+                                <li><strong>Depredadores y Redes P2P:</strong> Rincones oscuros donde buscan enganchar a los jóvenes digitalmente.</li>
+                                <li><strong>Robo de Identidad Juvenil:</strong> Creación de perfiles falsos a partir de fotografías y datos publicados en redes sociales.</li>
+                                <li><strong>Vulnerabilidades Móviles:</strong> Aplicaciones descargadas con keyloggers o spyware oculto.</li>
+                                <li><em>Acción Docente:</em> Fomentar el pensamiento crítico y la revisión estricta de permisos de aplicaciones.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Protegiendo a la Manada">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 6 -->
+            <div class="detail-card" id="tema6">
+                <div class="detail-content">
+                    <h2>6. El Riesgo en el Espejo: Vulnerabilidades Internas</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <ul>
+                                <li><strong>Amenazas Internas:</strong> Actos maliciosos o negligencia involuntaria por parte de personal autorizado dentro de la institución.</li>
+                                <li><strong>Riesgo de Cadena de Suministro:</strong> Compromiso de datos escolares debido a vulnerabilidades en software o servicios de terceros.</li>
+                                <li><em>Dato Curioso:</em> Los grandes incidentes suelen iniciarse utilizando las credenciales legítimas de empleados manipulados.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Riesgo en el Espejo">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 7 -->
+            <div class="detail-card" id="tema7">
+                <div class="detail-content">
+                    <h2>7. Matriz de Diagnóstico: ¿Cómo está tu Higiene Cibernética?</h2>
+                    <table class="matrix-table" style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.92rem;">
+                        <thead>
+                            <tr style="background: #0f172a; color: #ffffff;">
+                                <th style="border: 1px solid #e2e8f0; padding: 0.85rem; text-align: left;">Categoría</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 0.85rem; text-align: left;">Mala Higiene (Riesgo)</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 0.85rem; text-align: left;">Higiene Nivel Experto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><strong>Contraseñas</strong></td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-bad" style="background: #fee2e2; color: #991b1b; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Riesgo Alto</span> Usar "Profe1234"</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-expert" style="background: #dcfce7; color: #166534; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Seguro</span> Contraseñas robustas con MFA.</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><strong>Actualizaciones</strong></td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-bad" style="background: #fee2e2; color: #991b1b; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Riesgo Alto</span> Posponer parches por meses.</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-expert" style="background: #dcfce7; color: #166534; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Seguro</span> Actualizaciones automáticas activas.</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><strong>Redes y Archivos</strong></td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-bad" style="background: #fee2e2; color: #991b1b; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Riesgo Alto</span> Wi-Fi pública abierta sin protección.</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 0.85rem;"><span class="badge-expert" style="background: #dcfce7; color: #166534; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">Seguro</span> Uso de VPN y destrucción segura de papel.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tema 8 -->
+            <div class="detail-card" id="tema8">
+                <div class="detail-content">
+                    <h2>8. Tu Kit de Supervivencia: Los 4 Pilares</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <ul>
+                                <li><strong>Candados de Titanio:</strong> Políticas de contraseñas robustas y Autenticación Multifactor (MFA).</li>
+                                <li><strong>Vacunas Digitales:</strong> Antivirus y sistemas operativos con parches al día.</li>
+                                <li><strong>El Túnel Secreto:</strong> Uso obligatorio de VPN en redes públicas o aeropuertos.</li>
+                                <li><strong>Tierra Quemada:</strong> Trituración física de exámenes y expedientes con datos confidenciales.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s2_kit.jpeg')">
+                            <img src="imgsesiones/s2_kit.jpeg" alt="Kit de Supervivencia">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 9 -->
+            <div class="detail-card" id="tema9">
+                <div class="detail-content">
+                    <h2>9. La Muralla de la Institución: Defensas a Gran Escala</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <ul>
+                                <li><strong>El Bote de Salvavidas:</strong> Respaldos offline constantes contra ataques de ransomware.</li>
+                                <li><strong>La Bóveda:</strong> Cifrado estricto de datos en reposo y en tránsito.</li>
+                                <li><strong>El Foso:</strong> Firewalls y sistemas IDS/IPS para monitoreo de red en tiempo real.</li>
+                                <li><strong>La Guardia:</strong> Protocolos y planes de respuesta estructurados ante incidentes.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80" alt="La Muralla de la Institución">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 10 -->
+            <div class="detail-card" id="tema10">
+                <div class="detail-content">
+                    <h2>10. La Caballería de Élite: Conoce SentinelOne y tu Ecosistema</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <p><strong>SentinelOne:</strong> Utiliza inteligencia artificial avanzada y aprendizaje automático para detectar patrones anómalos y bloquear variantes nuevas de malware de manera autónoma en milisegundos (aislando dispositivos y revirtiendo daños).</p>
+                            <p><strong>Tu Rol en el Ecosistema:</strong></p>
+                            <ul>
+                                <li><strong>Paso 1 (Tú):</strong> Higiene cibernética y sentido común.</li>
+                                <li><strong>Paso 2 (TI):</strong> Controles perimetrales y de red.</li>
+                                <li><strong>Paso 3 (SentinelOne):</strong> Neutralización autónoma en puntos finales.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80')">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="SentinelOne y Ecosistema">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN CUESTIONARIO AUTOEVALUABLE -->
+    <section class="quiz-section" id="cuestionario">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Cuestionario Autoevaluable: Sesión 2</h2>
+                <p>Pon a prueba tus conocimientos sobre ciberseguridad avanzada, ingeniería social y defensa moderna.</p>
+            </div>
+
+            <form id="quiz-form">
+                <!-- Pregunta 1 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">1. ¿Qué táctica emplean los atacantes en el Phishing mediante ingeniería social?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p1" value="0"> Romper contraseñas mediante fuerza bruta física en servidores.</label>
+                        <label class="option-label"><input type="radio" name="p1" value="10"> Manipular la psicología humana usando pretextos urgentes para que entregues tus llaves de acceso.</label>
+                        <label class="option-label"><input type="radio" name="p1" value="0"> Instalar redes Wi-Fi públicas en los salones de clase.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">2. ¿Cuál es la principal característica del Ransomware?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p2" value="0"> Robar contraseñas mediante un llavero físico.</label>
+                        <label class="option-label"><input type="radio" name="p2" value="10"> Secuestrar datos cifrándolos y exigir un rescate financiero para devolver el acceso.</label>
+                        <label class="option-label"><input type="radio" name="p2" value="0"> Enviar correos masivos con faltas de ortografía.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">3. ¿Qué define a un ataque "Drive-by"?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p3" value="10"> Descargar malware automáticamente al visitar un sitio web infectado, sin que el usuario haga clic en nada.</label>
+                        <label class="option-label"><input type="radio" name="p3" value="0"> Robar datos mediante USBs dejadas en los automóviles del estacionamiento.</label>
+                        <label class="option-label"><input type="radio" name="p3" value="0"> Conectar dispositivos móviles a redes lentas.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">4. ¿Cómo utilizan los cibercriminales la Inteligencia Artificial actualmente?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p4" value="0"> Exclusivamente para jugar ajedrez en línea.</label>
+                        <label class="option-label"><input type="radio" name="p4" value="10"> Para campañas de phishing ultra-personalizadas, malware autónomo y evasión de antivirus.</label>
+                        <label class="option-label"><input type="radio" name="p4" value="0"> Para calificar tareas escolares automáticamente.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">5. ¿Qué acción docente es fundamental para proteger a los alumnos en el entorno digital?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p5" value="10"> Enseñarles a desconfiar de extraños en línea y revisar permisos de aplicaciones.</label>
+                        <label class="option-label"><input type="radio" name="p5" value="0"> Prohibir el uso de computadoras en todo el plantel.</label>
+                        <label class="option-label"><input type="radio" name="p5" value="0"> Cambiar las contraseñas de los alumnos cada 5 minutos.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">6. ¿Qué representa una amenaza interna por factor humano?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p6" value="10"> Riesgos provenientes desde adentro por actos maliciosos o negligencia involuntaria de usuarios autorizados.</label>
+                        <label class="option-label"><input type="radio" name="p6" value="0"> Ataques patrocinados por estados extranjeros exclusivamente.</label>
+                        <label class="option-label"><input type="radio" name="p6" value="0"> Caídas del suministro eléctrico en la ciudad.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">7. ¿Cuál es una práctica clave para mantener una higiene cibernética de nivel experto?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p7" value="0"> Usar la misma contraseña en todas las plataformas para no olvidarla.</label>
+                        <label class="option-label"><input type="radio" name="p7" value="10"> Usar contraseñas robustas con MFA, habilitar actualizaciones automáticas y usar VPN en redes públicas.</label>
+                        <label class="option-label"><input type="radio" name="p7" value="0"> Desactivar el antivirus para mejorar el rendimiento.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">8. ¿Para qué sirve el uso de una VPN en tu kit de supervivencia digital?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p8" value="10"> Para cifrar tu conexión cuando necesitas revisar correos del trabajo en redes públicas o aeropuertos.</label>
+                        <label class="option-label"><input type="radio" name="p8" value="0"> Para aumentar la velocidad de descarga de archivos pesados.</label>
+                        <label class="option-label"><input type="radio" name="p8" value="0"> Para evitar pagar la factura de internet.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 9 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">9. ¿Cuál es el propósito del "Bote de Salvavidas" (Copias de Seguridad) en la muralla institucional?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p9" value="0"> Ocupar espacio libre en los discos duros.</label>
+                        <label class="option-label"><input type="radio" name="p9" value="10"> Garantizar una rápida recuperación y respaldo constante de información crítica ante ataques de ransomware.</label>
+                        <label class="option-label"><input type="radio" name="p9" value="0"> Enviar respaldos por correo electrónico a los alumnos.</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 10 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">10. ¿Cómo actúa SentinelOne como plataforma de IA defensiva?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="p10" value="0"> Espera a que un técnico humano revise los reportes de virus cada semana.</label>
+                        <label class="option-label"><input type="radio" name="p10" value="10"> Detecta anomalías, aísla dispositivos comprometidos, elimina procesos maliciosos y revierte daños en milisegundos de forma autónoma.</label>
+                        <label class="option-label"><input type="radio" name="p10" value="0"> Envía alertas sonoras cuando alguien intenta adivinar una contraseña.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-quiz">Calcular Evaluación</button>
+            </form>
+
+            <div id="quiz-results" class="quiz-results">
+                <h3 id="score-text">Puntaje: 0 / 100</h3>
+                <p id="feedback-text">Has completado la autoevaluación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE IMAGEN AGRANDADA -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgExpanded" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Script principal global unificado -->
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!--
+  ======================================================================
+  INSTITUCIÓN: CBTis 166 Pablo Torres Burgos.
+  CURSO: Ciberseguridad.
+  Docente: José Guadalupe Villanueva Patricio.
+  ----------------------------------------------------------------------
+  * Estudiantes: Vázquez Garduño Martha Ivonne
+                 Lascurain Macías Julio César
+                 Gaona Castro Eduardo Baltazar
+
+  * Grupo: 3B PRO VESP  
+  * Actividad: Desarrollo de una página Web con información del curso
+    de Ciberseguridad (Unidades I, II y III).
+  ====================================================================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Ciberseguridad - CBTis 166</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="top-bar" id="inicio">
+        <div class="top-bar-container">
+            <div class="top-contacts">
+                <span class="top-item">🛡️ Curso: Fundamentos de Ciberseguridad</span>
+                <span class="top-item whatsapp">💬 Docente: <strong>Mtro. José Guadalupe Villanueva Patricio</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#inicio">
+                    <img src="img/logo.jpg" alt="CBTis 166" class="brand-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#temario">Temario General</a>
+                <a href="#docentes">Integrantes</a>
+                <a href="#reporte">Reporte de Amenazas</a>
+                <a href="#herramientas">Amenazas y Vectores</a>
+                
+                <a href="login.html" class="btn-nav-login">Acceso Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO (PORTADA PRINCIPAL) -->
+    <section class="hero-section">
+        <div class="hero-container">
+            
+            <!-- Columna Izquierda: Presentación del Curso -->
+            <div class="hero-text-side">
+                <span class="hero-tag">PROYECTO FINAL</span>
+                <h1>Fundamentos de la Ciberseguridad</h1>
+                <p>Portal didáctico desarrollado para concientizar sobre el mal uso de Internet, la higiene cibernética, malware e ingeniería social dentro del entorno educativo.</p>
+                
+                <div class="hero-cta-box">
+                    <a href="#temario" class="btn-orange">Ver Unidades del Curso →</a>
+                    <div class="hero-benefits">
+                        <span>✓ Phishing, Smishing y Vishing</span>
+                        <span>✓ Ransomware y Malware</span>
+                        <span>✓ Arquitectura Zero Trust</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Collage Visual -->
+            <div class="hero-image-side">
+                <div class="image-collage">
+                    <div class="collage-main">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Ciberseguridad">
+                    </div>
+                    <div class="collage-sub">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=300&q=80" alt="Seguridad de Datos">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" alt="Código y Redes">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TEMARIO GENERAL DEL CURSO -->
+    <section id="temario" class="careers-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Sesiones Temáticas del Curso</h2>
+                <p>Haz clic en cualquier sesión para ver los temas detallados</p>
+            </div>
+
+            <div class="careers-grid">
+                
+                <!-- Sesión 1 -->
+                <div class="career-card" onclick="window.location.href='sesiones/sesion1.html'" style="cursor: pointer;">
+                    <div class="career-img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy0lMFIHjrktiafoGF6bvySqOtHzSutsnaM0dzkO9EmVgqYJN_Nv1fbzpf&s=10" alt="Fundamentos e Historia">
+                    </div>
+                    <div class="career-content">
+                        <h3>Sesión 1: Historia y Fundamentos</h3>
+                        <p>Origen de ARPANET, conmutación de paquetes, modelo TCP/IP, primer malware (Creeper/Reaper) y el Pentágono de la Seguridad (Confidencialidad, Integridad, Disponibilidad, Autenticidad y Trazabilidad).</p>
+                    </div>
+                </div>
+
+                <!-- Sesión 2 -->
+                <div class="career-card" onclick="window.location.href='sesiones/sesion2.html'" style="cursor: pointer;">
+                    <div class="career-img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx_nytmrswIUOnU2FNMheijQhyhcaUOrhHuFMx38_lY2w6ey6RKNZGuwQ&s=10" alt = "Seguridad Escolar">
+                    </div>
+                    <div class="career-content">
+                        <h3>Sesión 2: Ciberseguridad para Docentes</h3>
+                        <p>Manual de supervivencia digital, higiene cibernética, autenticación multifactor (MFA), uso de VPNs, protección de datos estudiantiles y defensas automatizadas mediante IA (SentinelOne).</p>
+                    </div>
+                </div>
+
+                 <!-- Sesión 3 -->
+                <div class="career-card" onclick="window.location.href='sesiones/sesion3.html'" style="cursor: pointer;">
+                    <div class="career-img-container">
+                        <img src="https://cybermentor.net/wp-content/uploads/2026/03/seguridad-dns-portada-800x650.jpg" alt="Zero Trust">
+                    </div>
+                    <div class="career-content">
+                        <h3>Sesión 3: Ciberseguridad Escolar</h3>
+                        <p>Evaluación de ataques automatizados por Inteligencia Artificial, tunelizadores DNS, ataques Drive-by, prevención de brechas internas y defensa proactiva en puntos finales.</p>
+                    </div>
+                </div>
+
+                <!-- Sesión 4-->
+                <div class="career-card" onclick="window.location.href='sesiones/sesion4.html'" style="cursor: pointer;">
+                    <div class="career-img-container" >
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUc_0g1hPWybGUtdBWqV5PcaBVAKnuPy3l3hZpkxlnw&s=10" alt="Mal uso de Internet">
+                    </div>
+                    <div class="career-content">
+                        <h3>Sesión 4: Mal Uso del Internet</h3>
+                        <p>Análisis de correos maliciosos, Fake News, fraude electrónico, Phishing, Vishing, Smishing, Carta Nigeriana, código malicioso y gestión de información pública/conductas antisociales.</p>
+                    </div>
+                </div>
+
+               
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE INTEGRANTES DEL EQUIPO Y DOCENTE -->
+    <section id="docentes" class="teachers-section">
+        <div class="teachers-container">
+            
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">EQUIPO DE TRABAJO Y DOCENTE</span>
+                    <h2>Participantes del Proyecto</h2>
+                    <p>Integrantes del equipo y docente titular a cargo de la evaluación:</p>
+                </div>
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev" class="nav-btn">‹</button>
+                    <button id="btn-next" class="nav-btn">›</button>
+                </div>
+            </div>
+
+            <!-- Carrusel interactivo -->
+            <div class="teachers-grid" id="teachers-track">
+                
+                <div class="teacher-card">
+                    <img src="img/ivonne.jpeg" alt="Martha Ivonne">
+                    <div class="teacher-info">
+                        <h3>Vázquez Garduño Martha Ivonne</h3>
+                        <p>Estudiante / Desarrolladora del Proyecto de Ciberseguridad.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/julio.jpeg" alt="Julio César">
+                    <div class="teacher-info">
+                        <h3>Lascurain Macías Julio César</h3>
+                        <p>Estudiante / Investigador de Vectores de Ataque y Malware.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/gaona.jpg" alt="Eduardo Baltazar">
+                    <div class="teacher-info">
+                        <h3>Gaona Castro Eduardo Baltazar</h3>
+                        <p>Estudiante / Desarrollador Web y Maquetación de Interfaces.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/patricio.jpg" alt="José Guadalupe Villanueva Patricio">
+                    <div class="teacher-info">
+                        <h3>Mtro. José Guadalupe Villanueva Patricio.</h3>
+                        <p>Docente Titular del curso de Ciberseguridad en el CBTis 166.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE FORMULARIO DE REPORTE DE INCIDENTES / CONSULTA -->
+    <section class="hero-section" id="reporte">
+        <div class="hero-container" >
+            
+            <div class="hero-text-side">
+                <span class="hero-tag">REPORTE DE INCIDENTES Y CONSULTAS</span>
+                <h1 class="hero-title-custom">¿Detectaste un Correo o Enlace Sospechoso?</h1>
+                <p class="hero-desc-custom">
+                    Utiliza este formulario para simular el reporte de una amenaza cibernética, phishing o solicitar orientación sobre buenas prácticas de seguridad informática.
+                </p>
+                
+                <div class="hero-subtitle-custom">
+                    Recomendaciones inmediatas:
+                </div>
+                <div class="hero-benefits hero-benefits-column">
+                    <span>✓ No hagas clic en enlaces ni descargues archivos adjuntos</span>
+                    <span>✓ Verifica que el dominio del remitente sea el oficial</span>
+                    <span>✓ Cambia tus contraseñas si compartiste credenciales por error</span>
+                    <span>✓ Notifica inmediatamente al área de TI del plantel</span>
+                </div>
+            </div>
+
+            <!-- Formulario mantenido con los 10 elementos/campos originales -->
+            <div class="hero-form-side">
+                <div class="cbtis-hero-form-card">
+                    
+                    <h3 class="form-card-title">
+                        Reporte de Seguridad
+                    </h3>
+
+                    <form id="form-hero-informes" action="#" method="POST">
+                        
+                        <!-- 1. Nombre -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="text" id="info_nombre" name="nombre" required placeholder="Nombre" class="form-control-input">
+                        </div>
+
+                        <!-- 2. Apellido -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="text" id="info_apellido" name="apellido" required placeholder="Apellido" class="form-control-input">
+                        </div>
+
+                        <!-- 3. Correo -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="email" id="info_email" name="email" required placeholder="Correo institucional" class="form-control-input">
+                        </div>
+
+                        <!-- 4. Teléfono -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="tel" id="info_telefono" name="telefono" required placeholder="Teléfono de contacto" class="form-control-input">
+                        </div>
+
+                        <!-- 5. Menú: Rol -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <select id="info_nivel" name="nivel" required class="form-control-select">
+                                <option value="">Selecciona tu rol en el plantel</option>
+                                <option value="estudiante">Estudiante</option>
+                                <option value="docente">Docente / Personal Administrativo</option>
+                            </select>
+                        </div>
+
+                        <!-- 6. Menú: Tipo de Amenaza -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <select id="tipo_amenaza" name="tipo_amenaza" required class="form-control-select">
+                                <option value="">Tipo de incidente a reportar</option>
+                                <option value="phishing">Correo falso / Phishing / Smishing</option>
+                                <option value="malware">Infección por Malware / Ransomware</option>
+                                <option value="fakenews">Noticias falsas / Fake News</option>
+                                <option value="fraude">Intento de fraude electrónico / Carta Nigeriana</option>
+                            </select>
+                        </div>
+
+                        <!-- 7. Fecha -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <label for="info_fecha" class="form-date-label">Fecha del hallazgo:</label>
+                            <input type="date" id="info_fecha" name="fecha" required class="form-control-date">
+                        </div>
+
+                        <!-- 8. Detalle del incidente -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <textarea id="info_comentarios" name="comentarios" rows="2" placeholder="Describe brevemente el asunto o correo sospechoso..." class="form-control-textarea"></textarea>
+                        </div>
+
+                        <!-- 9. Checkbox -->
+                        <div class="cbtis-input-group form-group-checkbox">
+                            <input type="checkbox" id="info_terminos" name="terminos" required class="form-checkbox-input">
+                            <label for="info_terminos" class="form-checkbox-label">
+                                Confirmo que la información proporcionada es verídica para el análisis de seguridad.
+                            </label>
+                        </div>
+
+                        <!-- 10. Botón Submit -->
+                        <button type="submit" class="cbtis-btn-ingresar form-submit-btn">
+                            Enviar Reporte
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE MARQUESINA DE AMENAZAS Y HERRAMIENTAS DE DEFENSA -->
+    <section id="herramientas" class="convenios-section">
+        <div class="convenios-container">
+            
+            <div class="section-header">
+                <span class="teachers-tag convenience-tag-custom"></span>
+                <h2>Amenazas y Herramientas de Ciberseguridad</h2>
+                <p>Conceptos clave abordados en las sesiones de trabajo del curso escolar.</p>
+            </div>
+
+            <!-- LÍNEA 1: Amenazas comunes -->
+            <div class="marquee-wrapper">
+                <div class="marquee-track marquee-track-top">
+                    <div class="convenio-card">⚠️ Phishing</div>
+                    <div class="convenio-card">📞 Vishing</div>
+                    <div class="convenio-card">📱 Smishing</div>
+                    <div class="convenio-card">🇳🇬 Carta Nigeriana</div>
+                    <div class="convenio-card">📰 Fake News</div>
+                    <div class="convenio-card">💳 Fraude Electrónico</div>
+                    <div class="convenio-card">🦠 Ransomware</div>
+                    <div class="convenio-card">🐴 Caballo de Troya</div>
+                    <!-- Duplicado para efecto infinito -->
+                    <div class="convenio-card">⚠️ Phishing</div>
+                    <div class="convenio-card">📞 Vishing</div>
+                    <div class="convenio-card">📱 Smishing</div>
+                    <div class="convenio-card">🇳🇬 Carta Nigeriana</div>
+                    <div class="convenio-card">📰 Fake News</div>
+                    <div class="convenio-card">💳 Fraude Electrónico</div>
+                    <div class="convenio-card">🦠 Ransomware</div>
+                    <div class="convenio-card">🐴 Caballo de Troya</div>
+                </div>
+            </div>
+
+            <!-- LÍNEA 2: Herramientas y Conceptos de Defensa -->
+            <div class="marquee-wrapper marquee-wrapper-spacing">
+                <div class="marquee-track marquee-track-bottom">
+                    <div class="convenio-card">🛡️ SentinelOne AI</div>
+                    <div class="convenio-card">🔑 MFA / 2FA</div>
+                    <div class="convenio-card">🔒 Cifrado de Datos</div>
+                    <div class="convenio-card">🧱 Firewall / IDS / IPS</div>
+                    <div class="convenio-card">🌐 VPN Privada</div>
+                    <div class="convenio-card">💾 Copias de Seguridad</div>
+                    <div class="convenio-card">⚡ Zero Trust</div>
+                    <div class="convenio-card">🌐 Protocolo TCP/IP</div>
+                    <!-- Duplicado para efecto infinito -->
+                    <div class="convenio-card">🛡️ SentinelOne AI</div>
+                    <div class="convenio-card">🔑 MFA / 2FA</div>
+                    <div class="convenio-card">🔒 Cifrado de Datos</div>
+                    <div class="convenio-card">🧱 Firewall / IDS / IPS</div>
+                    <div class="convenio-card">🌐 VPN Privada</div>
+                    <div class="convenio-card">💾 Copias de Seguridad</div>
+                    <div class="convenio-card">⚡ Zero Trust</div>
+                    <div class="convenio-card">🌐 Protocolo TCP/IP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-info">
+                <p>CBTis 166 Pablo Torres Burgos &copy; 2026 - Curso de Ciberseguridad</p>
+                <p class="footer-author">Desarrollado por: Vázquez Garduño M. I. | Lascurain Macías J. C. | Gaona Castro E. B.</p>
+            </div>
+
+            <!-- Enlaces Sociales -->
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" class="social-icon" title="Facebook">f</a>
+                <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">ig</a>
+                <a href="https://whatsapp.com" target="_blank" class="social-icon" title="WhatsApp">💬</a>
+                <a href="https://youtube.com" target="_blank" class="social-icon" title="YouTube"> ▶</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

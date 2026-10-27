@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 3: Ciberseguridad Escolar - CBTis 166</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="../index.html#inicio"><img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img"></a></div>
+            <nav class="nav-links">
+                <a href="../index.html#temario">← Volver al Temario</a>
+                <a href="login.html" class="btn-nav-login">Acceso Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-text-side">
+                <span class="hero-tag">SESIÓN 3</span>
+                <h1>Ciberseguridad Escolar</h1>
+                <p>Evaluación de ataques automatizados por Inteligencia Artificial, tunelizadores DNS, ataques Drive-by, prevención de brechas internas y defensa proactiva en puntos finales.</p>
+                <a href="#cuestionario" class="btn-go-quiz">Contestar Cuestionario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARRUSEL CON TARJETAS REDIRECCIONABLES -->
+    <section class="teachers-section" style="background: transparent;">
+        <div class="teachers-container">
+            
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">TEMARIO SESIÓN 3</span>
+                    <h2 style="color: #0f172a;">Temas de Ciberseguridad Escolar</h2>
+                    <p style="color: #64748b;">Utiliza las flechas o desliza con el dedo/mouse para recorrer los 10 temas. Da clic para ir al tema.</p>
+                </div>
+                <!-- Botones de navegación del carrusel -->
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">‹</button>
+                    <button id="btn-next-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">›</button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Carrusel -->
+            <div class="teachers-grid" id="sesion3-track">
+
+                <!-- 1. El campus invisible -->
+                <div class="teacher-card" onclick="scrollToDetail('tema1')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/1.jpeg" alt="El campus invisible">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">1. El campus invisible</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">El campus escolar ya no se limita a lo físico. Existe una compleja dimensión digital compuesta por redes Wi-Fi, móviles y la nube.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Tu escuela ya no es solo un edificio -->
+                <div class="teacher-card" onclick="scrollToDetail('tema2')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/2.jpeg" alt="Ecosistema digital complejo">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">2. Ecosistema digital complejo</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Aulas y pizarrones se transforman en ecosistemas hiperconectados con LMS, IoT y dispositivos BYOD.</p>
+                    </div>
+                </div>
+
+                <!-- 3. EL Mapa de las amenazas -->
+                <div class="teacher-card" onclick="scrollToDetail('tema3')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/3.jpeg" alt="Mapa de amenazas">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">3. Mapa de 11 tácticas 2026</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Desglose del mapa de amenazas: factor humano, trampas en tareas, ransomware, IA maliciosa, túneles DNS y ataques de estado.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Los puntos ciegos de la escuela -->
+                <div class="teacher-card" onclick="scrollToDetail('tema4')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/4.jpeg" alt="Puntos ciegos">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">4. Puntos ciegos escolares</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Zonas sin supervisión como Wi-Fi abierto, falta de control en BYOD y laboratorios desactualizados.</p>
+                    </div>
+                </div>
+
+                <!-- 5. La nueva frontera -->
+                <div class="teacher-card" onclick="scrollToDetail('tema5')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/5.jpeg" alt="Tecnología avanzada">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">5. La nueva frontera (IA)</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Tecnologías de última generación: inteligencia artificial, deepfakes y automatización de ataques.</p>
+                    </div>
+                </div>
+
+                <!-- 6. El enemigo a gran escala -->
+                <div class="teacher-card" onclick="scrollToDetail('tema6')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/6.jpeg" alt="Ataques estatales">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">6. Ataques de estado</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Grupos cibernéticos avanzados con financiamiento masivo que buscan robo de información o acceso a redes.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Matriz de diagnostico -->
+                <div class="teacher-card" onclick="scrollToDetail('tema7')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/7.jpeg" alt="Matriz de diagnóstico">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">7. Matriz de diagnóstico</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Herramienta para clasificar y evaluar las distintas formas de ataque y su impacto en la escuela.</p>
+                    </div>
+                </div>
+
+                <!-- 8. La causa raiz de todo -->
+                <div class="teacher-card" onclick="scrollToDetail('tema8')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/8.jpeg" alt="Mala higiene cibernética">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">8. Mala higiene cibernética</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Descuidos diarios como usar contraseñas débiles, no actualizar e ignorar protocolos básicos.</p>
+                    </div>
+                </div>
+
+                <!-- 9. El escudo escolar -->
+                <div class="teacher-card" onclick="scrollToDetail('tema9')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/9.jpeg" alt="El escudo escolar">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">9. El escudo escolar</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Las 4 mejores prácticas indispensables para proteger el campus físico y virtual en 2026.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Tu entorno tu responsabilidad -->
+                <div class="teacher-card" onclick="scrollToDetail('tema10')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/10.jpeg" alt="Responsabilidad compartida">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">10. Tu entorno tu responsabilidad</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">La protección del ecosistema digital es una responsabilidad compartida por toda la comunidad escolar.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DESGLOSE COMPLETO CON ID PARA NAVEGACIÓN -->
+    <section class="topics-detail-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Desarrollo Detallado de los Temas</h2>
+                <p>Haz clic sobre cualquier imagen para verla en tamaño completo</p>
+            </div>
+
+            <!-- Tema 1 -->
+            <div class="detail-card" id="tema1">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/1.jpeg')">
+                    <img src="imgsesiones/1.jpeg" alt="1. El campus invisible">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>1. El campus invisible: Amenazas de ciberseguridad 2026</h2>
+                    <p>El campus escolar ya no se limita a lo que se puede ver y tocar. Existe una compleja dimensión digital invisible, compuesta por redes Wi-Fi, dispositivos móviles, servidores y tráfico de datos en la nube, que funciona de manera ininterrumpida. Esta infraestructura, indispensable para el día a día, es también el escenario donde operan amenazas silenciosas que buscan explotar cualquier vulnerabilidad.</p>
+                    <p>Este tema nos enseña a reconocer que, aunque no veamos los datos en el aire, cada conexión, correo y descarga de un estudiante o docente en el plantel forma parte de un entorno digital expuesto a riesgos reales como la intercepción de información o el acceso no autorizado. Entender el "campus invisible" es el primer paso para aprender a protegerlo.</p>
+                </div>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="detail-card" id="tema2">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/2.jpeg')">
+                    <img src="imgsesiones/2.jpeg" alt="2. Tu escuela ya no es solo un edificio">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>2. Tu escuela ya no es solo un edificio es un ecosistema digital complejo</h2>
+                    <p>Las escuelas han dejado de ser solo aulas y pizarrones para transformarse en verdaderos ecosistemas digitales hiperconectados. En este entorno interactúan plataformas de aprendizaje (LMS), sistemas de gestión escolar, bases de datos con información sensible, redes de internet de las cosas (IoT), y un sinfín de dispositivos personales de alumnos y profesores (BYOD) que extienden las fronteras de la institución hacia la nube.</p>
+                    <p>Esta complejidad significa que un problema en un punto de la red —como un dispositivo de un estudiante infectado en casa— puede comprometer el sistema completo de la escuela. Por ello, debemos comprender que la seguridad escolar ya no consiste en ponerle llave a una puerta, sino en resguardar un tejido tecnológico vivo, donde cada usuario y sistema conectado influye en la seguridad de los demás.</p>
+                </div>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="detail-card" id="tema3">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/3.jpeg')">
+                    <img src="imgsesiones/3.jpeg" alt="3. El Mapa de Amenazas: Las 11 tácticas de 2026">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>3. El Mapa de Amenazas: Las 11 tácticas de 2026</h2>
+                    <p>Para defender el campus, debemos entender dónde se esconden las trampas. Todas las amenazas modernas se agrupan en tres áreas críticas de nuestra vida escolar:</p>
+                    <ul>
+                        <li><strong>1. El Factor Humano:</strong> Tú y tus compañeros</li>
+                        <li><strong>2. Navegación y Dispositivos:</strong> Tus tareas y descargas</li>
+                        <li><strong>3. La Infraestructura:</strong> Los sistemas de la escuela</li>
+                    </ul>
+
+                    <h3>8:00 AM: El Factor Humano (Nuestra mente es la primera vulnerabilidad)</h3>
+                    <p><strong>Ingeniería Social:</strong></p>
+                    <ul>
+                        <li>Manipula la psicología humana en lugar de las vulnerabilidades técnicas.</li>
+                        <li>Usa engaños y pretextos para que entregues datos confidenciales.</li>
+                        <li><em>Dato clave:</em> Logran burlar incluso los sistemas de seguridad más avanzados.</li>
+                        <li><em>Ejemplo:</em> El correo falso del Director pidiendo tu contraseña.</li>
+                    </ul>
+                    <p><strong>Amenazas Internas:</strong></p>
+                    <ul>
+                        <li>Peligros desde adentro, por usuarios con acceso autorizado.</li>
+                        <li>Pueden ser maliciosos (un alumno alterando calificaciones) o involuntarios (una acción negligente de un profesor que provoca una brecha).</li>
+                        <li>Son los más difíciles de detectar.</li>
+                    </ul>
+
+                    <h3>11:30 AM: Las Trampas en la Tarea (Infecciones silenciosas)</h3>
+                    <p><em>Acción de origen: Clic en "Resumen de Historia Gratis PDF"</em></p>
+                    <p><strong>Caballos de Troya:</strong></p>
+                    <ul>
+                        <li>Malware con apariencia inofensiva que incita al usuario a descargarlo.</li>
+                        <li>Una vez dentro, roba datos o crea puertas traseras.</li>
+                        <li><em>Ejemplo:</em> Descargar software pirata para un proyecto escolar.</li>
+                    </ul>
+                    <p><strong>Ataques desde un Vehículo en Movimiento (Drive-by):</strong></p>
+                    <ul>
+                        <li>Ocurre al visitar sitios web infectados.</li>
+                        <li>Navegar es como conducir un vehículo: el código malicioso explota vulnerabilidades del navegador y se descarga automáticamente.</li>
+                        <li>Todo sucede sin conocimiento ni clic del usuario.</li>
+                    </ul>
+
+                    <h3>2:00 PM: El Peor Día de Exámenes (Ransomware)</h3>
+                    <p><strong>Ransomware:</strong> Malware que manipula los datos del usuario, los encripta y los vuelve inaccesibles a cambio de un rescate financiero elevado (logrado tras un profundo reconocimiento de la red).</p>
+                    <p><strong>El Impacto Escolar:</strong></p>
+                    <ul>
+                        <li>Semana de exámenes finales.</li>
+                        <li>Nadie puede acceder a la plataforma, ver calificaciones, ni subir proyectos.</li>
+                        <li>Las operaciones de la escuela se interrumpen por completo.</li>
+                        <li>Sin copias de seguridad, la pérdida de datos de toda tu preparatoria es catastrófica.</li>
+                    </ul>
+
+                    <h3>La Nueva Frontera (Tecnología Avanzada 2026)</h3>
+                    <p><strong>Inteligencia Artificial Maliciosa:</strong></p>
+                    <ul>
+                        <li>Los ciberdelincuentes usan IA para campañas masivas de phishing y malware que aprende del entorno para evadir detección.</li>
+                        <li><em>Ejemplo:</em> Correos redactados perfectamente imitando el tono exacto de tus maestros.</li>
+                    </ul>
+                    <p><strong>Túnel DNS:</strong></p>
+                    <ul>
+                        <li>DNS es el Sistema de Nombres de Dominio (la base de internet).</li>
+                        <li>Los atacantes logran encapsular una gran cantidad de datos maliciosos dentro de estas consultas normales.</li>
+                        <li>Es como contrabandear un ataque dentro del tráfico normal para burlar el firewall escolar.</li>
+                    </ul>
+
+                    <h3>El Enemigo a Gran Escala (Ataques Patrocinados por el Estado)</h3>
+                    <p><strong>El Concepto:</strong> Agencias cibernéticas o Estados nación altamente sofisticados buscando robar infraestructura crítica, datos gubernamentales o espionaje por motivos políticos o económicos.</p>
+                    <p><strong>La Conexión Escolar:</strong> Aunque es más común en universidades con investigación avanzada, las preparatorias públicas son blancos para el robo masivo de identidades a nivel nacional, sirviendo como puentes hacia redes gubernamentales más grandes.</p>
+                </div>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="detail-card" id="tema4">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/4.jpeg')">
+                    <img src="imgsesiones/4.jpeg" alt="4. Los puntos ciegos de la escuela">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>4. Los puntos ciegos de la escuela</h2>
+                    <p>Todas las escuelas tienen "puntos ciegos" de ciberseguridad: aquellas zonas de la infraestructura física o digital que quedan fuera de la supervisión constante y que los atacantes aprovechan con facilidad. Estos incluyen el uso de redes Wi-Fi públicas sin contraseñas, la falta de control sobre los dispositivos personales de los alumnos (BYOD), equipos de cómputo desactualizados en laboratorios, e incluso basura con documentos confidenciales o proveedores externos que acceden a los sistemas de la escuela sin un control riguroso.</p>
+                    <p>Identificar estos vacíos nos ayuda a darnos cuenta de que la seguridad es tan fuerte como su eslabón más débil. Al arrojar luz sobre los puntos ciegos, la comunidad educativa puede aplicar medidas correctivas, cerrar brechas imprevistas y evitar que un descuido en un rincón olvidado de la red se convierta en la puerta de entrada para un desastre digital.</p>
+                </div>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="detail-card" id="tema5">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/5.jpeg')">
+                    <img src="imgsesiones/5.jpeg" alt="5. La nueva frontera">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>5. La nueva frontera (Tecnologia avanzada)</h2>
+                    <p>Bienvenidos a la nueva frontera de la seguridad informática, donde la batalla se libra con tecnologías de última generación. Los ciberataques de 2026 utilizan inteligencia artificial, deepfakes, automatización y algoritmos avanzados para burlar las defensas tradicionales en cuestión de milisegundos, desafiando por completo la velocidad de reacción de los seres humanos.</p>
+                    <p>Para combatir estas amenazas de última generación, los defensores de la escuela también deben valerse de tecnología avanzada: inteligencia artificial defensiva que detecta anomalías en tiempo real, autenticación de vanguardia y sistemas de encriptación cuántica. Este tema nos prepara para comprender que la ciberseguridad es una constante evolución científica y nos enseña a utilizar estas herramientas inteligentes como nuestros mejores aliados.</p>
+                    <p><strong>Inteligencia Artificial Maliciosa:</strong></p>
+                    <ul>
+                        <li>Los ciberdelincuentes usan IA para campañas masivas de phishing y malware que aprende del entorno para evadir detección.</li>
+                        <li><em>Ejemplo:</em> Correos redactados perfectamente imitando el tono exacto de tus maestros.</li>
+                    </ul>
+                    <p><strong>Túnel DNS:</strong></p>
+                    <ul>
+                        <li>DNS es el Sistema de Nombres de Dominio (la base de internet).</li>
+                        <li>Los atacantes logran encapsular una gran cantidad de datos maliciosos dentro de estas consultas normales.</li>
+                        <li>Es como contrabandear un ataque dentro del tráfico normal para burlar el firewall escolar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tema 6 -->
+            <div class="detail-card" id="tema6">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/6.jpeg')">
+                    <img src="imgsesiones/6.jpeg" alt="6. El enemigo a gran escala">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>6. El enemigo a gran escala (Ataques patrocinados por el estado)</h2>
+                    <p>No todos los atacantes son aficionados o estafadores comunes; existen grupos cibernéticos masivos con un financiamiento casi ilimitado y una sofisticación técnica alarmante: los ataques patrocinados por Estados o agencias gubernamentales. Aunque parezca que una escuela no es de su interés, estos grupos suelen atacar el sector educativo para robar propiedad intelectual, investigaciones científicas, o bien, para usar las redes escolares como un "trampolín" hacia infraestructuras críticas del gobierno o grandes corporaciones.</p>
+                    <p>Este tema nos abre los ojos ante la magnitud de la guerra cibernética global. Nos enseña que la seguridad de nuestra institución no es un asunto menor ni aislado, sino que formamos parte de un panorama geopolítico donde un nivel alto de protección es indispensable para blindar la información colectiva de la sociedad frente a espionaje y sabotaje internacional.</p>
+                </div>
+            </div>
+
+            <!-- Tema 7 -->
+            <div class="detail-card" id="tema7">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/7.jpeg')">
+                    <img src="imgsesiones/7.jpeg" alt="7. Matriz de diagnostico">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>7. Matriz de diagnostico: como nos atacan</h2>
+                    <p>Para defenderse con eficacia, primero hay que entender con precisión el método del adversario. La matriz de diagnóstico es una herramienta de análisis que nos permite clasificar y evaluar las distintas formas de ataque (digitales, sociales, físicas e internas) frente a su impacto en la escuela, identificando el nivel de riesgo, la rapidez de detección, los procesos de mitigación y las defensas urgentes para contenerlos.</p>
+                    <p>Utilizar esta matriz nos ayuda a dejar de ver la ciberseguridad como algo abstracto y nos permite verla como un problema estructurado. Con este diagnóstico, el personal de TI y los líderes escolares pueden priorizar esfuerzos, entender qué áreas necesitan mayor presupuesto o atención y tomar decisiones basadas en datos reales para evitar que las amenazas se traduzcan en incidentes de seguridad.</p>
+                </div>
+            </div>
+
+            <!-- Tema 8 -->
+            <div class="detail-card" id="tema8">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/8.jpeg')">
+                    <img src="imgsesiones/8.jpeg" alt="8. La causa raiz de todo">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>8. La causa raiz de todo: Mala higiene cibernetica</h2>
+                    <p>Detrás de la inmensa mayoría de los ciberataques exitosos no hay un virus avanzado ni un plan de espionaje de película, sino una causa mucho más común y evitable: la mala higiene cibernética. Esto se refiere al descuido diario de las normas básicas de seguridad, como usar contraseñas débiles o repetidas, dejar post-its con claves pegados en monitores, ignorar las actualizaciones del sistema, conectar USBs desconocidos o conectarse a redes Wi-Fi públicas sin protección.</p>
+                    <p>Este tema busca concientizarnos sobre el impacto que tienen nuestras pequeñas acciones cotidianas. Así como nos lavamos las manos para prevenir enfermedades físicas, practicar una buena higiene cibernética diaria —como usar autenticación de doble factor y actualizar nuestros equipos— es el escudo más simple y efectivo para evitar que un hacker de paso explote un descuido y paralice nuestra escuela.</p>
+                </div>
+            </div>
+
+            <!-- Tema 9 -->
+            <div class="detail-card" id="tema9">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/9.jpeg')">
+                    <img src="imgsesiones/9.jpeg" alt="9. El escudo escolar">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>9. El escudo escolar: 4 practicas para 2026</h2>
+                    <p>El Escudo Escolar reúne las 4 mejores prácticas indispensables para proteger a una comunidad educativa frente a los riesgos del 2026. Estas prácticas son: 1) Políticas de contraseñas fuertes y MFA (Doble Factor) para verificar identidades, 2) Segmentación de la Red para que un dispositivo infectado no contagie todo el plantel, 3) Control estricto de dispositivos BYOD y aplicaciones no autorizadas, y 4) Rutinas de copias de seguridad de datos con un Plan de respuesta en caso de incidentes.</p>
+                    <p>Implementar estas 4 prácticas es como levantar una muralla digital de alta resistencia alrededor del campus físico y virtual. En lugar de vivir con el miedo de ser atacados, el Escudo Escolar nos ofrece un marco preventivo y de resiliencia, de modo que si un ataque llega, la escuela tenga las herramientas y la preparación para contenerlo de inmediato y seguir operando sin contratiempos.</p>
+                </div>
+            </div>
+
+            <!-- Tema 10 -->
+            <div class="detail-card" id="tema10">
+                <div class="detail-img-container" onclick="openModal('imgsesiones/10.jpeg')">
+                    <img src="imgsesiones/10.jpeg" alt="10. Tu entorno tu responsabilidad">
+                    <span class="zoom-hint">🔍 Clic para agrandar</span>
+                </div>
+                <div class="detail-content">
+                    <h2>10. Tu entorno tu responsabilidad</h2>
+                    <p>Para cerrar esta travesía, recordamos la verdad más grande de la ciberseguridad: la protección de nuestro ecosistema digital no es tarea exclusiva de un software, un ingeniero o del director; es una responsabilidad compartida que recae en cada estudiante, docente, padre de familia y administrativo que interactúa con la escuela.</p>
+                    <p>Cada vez que elegimos no compartir una contraseña, reportamos un correo sospechoso de phishing, o actualizamos un dispositivo, estamos aportando un ladrillo a la defensa colectiva. Al comprender que nuestro entorno es nuestra responsabilidad, pasamos de ser espectadores vulnerables a defensores activos, asegurando que la escuela siga siendo un espacio seguro, confiable y libre para el aprendizaje y el crecimiento de todos.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CUESTIONARIO AUTOEVALUABLE -->
+    <section class="quiz-section" id="cuestionario">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Cuestionario Autoevaluable: Sesión 3</h2>
+                <p>Pon a prueba tus conocimientos sobre Ciberseguridad Escolar aprendidos en esta unidad.</p>
+            </div>
+
+            <form id="quiz-form">
+                
+                <!-- Pregunta 1 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">1. Un atacante logra acceder a la red corporativa engañando a un empleado por teléfono para que le proporcione su credencial de acceso. ¿Por qué esta acción se clasifica como ingeniería social en lugar de un ataque técnico tradicional?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            Solo se puede realizar contra empresas que no disponen de cortafuegos ni gateways perimetrales en su red.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            Utiliza herramientas de fuerza bruta para descifrar automáticamente la contraseña de la víctima en tiempo real.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="10">
+                            Se basa en la explotación de la psicología humana y el factor humano en lugar de vulnerabilidades en el software o código.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            Requiere la instalación previa de un malware avanzado en el dispositivo del usuario para poder grabar la llamada.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">2. Una empresa utiliza proveedores externos que poseen acceso directo a sus bases de datos operativas. De acuerdo con las buenas prácticas, ¿cuáles de las siguientes medidas son indispensables para gestionar los riesgos asociados a estos terceros? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p2" value="3.33">
+                            Garantizar que los requisitos de seguridad exigidos a los proveedores estén a la altura de los de la propia organización.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p2" value="3.33">
+                            Implementar un monitoreo constante de los accesos y actividades que realizan dichos terceros en los sistemas internos.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p2" value="3.34">
+                            Realizar evaluaciones de seguridad rigurosas y auditorías continuas a los proveedores.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p2" value="0">
+                            Delegar formalmente toda la responsabilidad legal en el proveedor para no requerir supervisiones técnicas.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">3. Durante una auditoría de rutina, el equipo de TI descubre que los depósitos de almacenamiento en la nube de una empresa están configurados como públicos, dejando expuesta información confidencial. ¿A qué categoría de amenaza corresponde este incidente?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            Ingeniería social
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="10">
+                            Errores de configuración
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            Ataque cibernético desde un vehículo en movimiento
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            Túnel DNS
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">4. ¿De qué maneras los ciberdelincuentes utilizan la inteligencia artificial para potenciar y perfeccionar sus ataques cibernéticos? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p4" value="3.33">
+                            Automatizando la creación de campañas masivas de phishing con un mayor nivel de sofisticación y personalización.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p4" value="0">
+                            Sustituyendo por completo la necesidad de utilizar infraestructura de red o servidores en sus ataques.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p4" value="3.33">
+                            Analizando sistemas y aplicaciones de forma automatizada para encontrar y explotar vulnerabilidades.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p4" value="3.34">
+                            Desarrollando malware capaz de aprender del entorno para adaptarse y evadir la detección de las herramientas de seguridad.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">5. Un sistema de monitoreo de red detecta un volumen anormal de datos maliciosos encapsulados dentro de consultas y respuestas del Sistema de Nombres de Dominio. ¿Cuál es la finalidad principal de los atacantes al emplear este método de túnel DNS?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p5" value="0">
+                            Infectar automáticamente los navegadores web de los usuarios sin que estos requieran conexión a internet.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p5" value="10">
+                            Eludir los controles de seguridad tradicionales para exfiltrar datos o establecer comunicación de comando y control.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p5" value="0">
+                            Modificar directamente las contraseñas predeterminadas de las interfaces administrativas de la empresa.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p5" value="0">
+                            Engañar telefónicamente a los administradores de TI para obtener credenciales de privilegios elevados.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">6. Examine los siguientes dos casos: (1) Un usuario descarga involuntariamente un archivo malicioso tras ser engañado, y (2) un empleado saliente copia datos confidenciales para venderlos a un competidor. ¿Qué característica común justifica la clasificación de ambos casos como amenazas internas?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            Ambas acciones son organizadas y financiadas por agencias cibernéticas de Estados nación.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            Los dos escenarios son causados por errores involuntarios de configuración en los cortafuegos perimetrales.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            En ambos casos es obligatorio que los involucrados utilicen herramientas de inteligencia artificial para ejecutar el ataque.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="10">
+                            Ambos incidentes se originan a través de personas que poseen o poseían acceso autorizado a los sistemas de la organización.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">7. Una organización busca implementar una defensa sólida contra el ransomware para minimizar el riesgo de interrupción operativa y pérdida de datos. ¿Cuáles de las siguientes medidas corresponden a buenas prácticas para este fin? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p7" value="0">
+                            Pagar inmediatamente el rescate solicitado por los atacantes para evitar el reconocimiento de red.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p7" value="3.33">
+                            Mantener una rutina constante de copias de seguridad de la información crítica.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p7" value="3.33">
+                            Impartir capacitación periódica al personal en materia de higiene cibernética y detección de amenazas.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p7" value="3.34">
+                            Asegurar la protección rigurosa de todos los endpoints y mantener los sistemas actualizados.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">8. Un usuario visita un sitio web comprometido y, sin interactuar con ningún anuncio ni presionar ningún botón de descarga, se ejecuta automáticamente un código que infecta su equipo. ¿Qué diferencia clave existe entre este ataque ('drive-by') y una infección mediante un caballo de Troya?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p8" value="0">
+                            El ataque 'drive-by' exige que el usuario ingrese voluntariamente sus credenciales de acceso para activar la descarga.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p8" value="0">
+                            El caballo de Troya solo se transmite mediante consultas DNS, mientras que el ataque 'drive-by' requiere el uso de inteligencia artificial.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p8" value="0">
+                            El ataque 'drive-by' se limita exclusivamente al robo de infraestructura crítica estatal, mientras que el troyano solo afecta a redes domésticas.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p8" value="10">
+                            El ataque 'drive-by' ocurre sin requerir ninguna acción o consentimiento del usuario, mientras que el troyano incentiva a la víctima a descargar y abrir el archivo mediante engaño.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 9 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">9. ¿Cuáles de las siguientes situaciones dentro del ámbito informático de una organización representan manifestaciones de una mala higiene cibernética? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p9" value="3.33">
+                            Utilizar contraseñas débiles o reutilizar la misma clave en múltiples servicios corporativos.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p9" value="0">
+                            Implementar la autenticación multifactor para el acceso a la red corporativa.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p9" value="3.33">
+                            Omitir la instalación de parches y actualizaciones de seguridad en los sistemas operativos y aplicaciones.
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p9" value="3.34">
+                            No realizar copias de seguridad de los datos ni contar con un software antivirus activo.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 10 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">10. ¿Qué factor distingue de manera fundamental a los ataques patrocinados por el Estado respecto a la mayoría de los ciberdelitos comunes?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Su incapacidad para vulnerar sistemas que dispongan de copias de seguridad en la nube.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Que se basan únicamente en la propagación fortuita de troyanos a través de sitios web de entretenimiento.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="10">
+                            Su elevada sofisticación técnica y el respaldo de agencias o estados nación para perseguir objetivos políticos, militares o económicos.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Que son provocados de manera involuntaria por empleados que descuidan el mantenimiento de sus contraseñas.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-quiz">Calcular Evaluación</button>
+            </form>
+
+            <div id="quiz-results" class="quiz-results">
+                <h3 id="score-text">Puntaje: 0 / 100</h3>
+                <p id="feedback-text">Has completado la autoevaluación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE IMAGEN AGRANDADA -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgExpanded" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+    </div>
+
+    <script src="../script.js"></script>
+    
+</body>
+</html>

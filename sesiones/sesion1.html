@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 1: Historia y Fundamentos de la Ciberseguridad - CBTis 166</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="../index.html#inicio"><img src="../img/logo.jpg" alt="CBTis 166" class="brand-logo-img"></a></div>
+            <nav class="nav-links">
+                <a href="../index.html#temario">← Volver al Temario</a>
+                <a href="login.html" class="btn-nav-login">Acceso Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-text-side">
+                <span class="hero-tag">SESIÓN 1</span>
+                <h1>Historia y Fundamentos de la Ciberseguridad</h1>
+                <p>Evolución histórica desde ARPANET hasta la Inteligencia Artificial, el modelo Zero Trust, los pilares de la seguridad de la información y la estrategia de defensa en profundidad.</p>
+                <a href="#cuestionario" class="btn-go-quiz">Contestar Cuestionario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARRUSEL CON MISMA LÓGICA E ID QUE SESIÓN 3 -->
+    <section class="teachers-section" style="background: transparent;">
+        <div class="teachers-container">
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">TEMARIO SESIÓN 1</span>
+                    <h2 style="color: #0f172a;">Temas de Historia y Fundamentos</h2>
+                    <p style="color: #64748b;">Utiliza las flechas o desliza con el dedo/mouse para recorrer los 10 temas. Da clic para ir al tema.</p>
+                </div>
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">‹</button>
+                    <button id="btn-next-sesion3" class="nav-btn" style="background: #1e293b; border-color: #334155;">›</button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Carrusel -->
+            <div class="teachers-grid" id="sesion3-track">
+
+                <!-- 1. La Carrera Armamentista Digital -->
+                <div class="teacher-card" onclick="scrollToDetail('tema1')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_carrera.jpeg" alt="La Carrera Armamentista Digital" >
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">1. La Carrera Armamentista Digital</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">El ciclo incesante entre creación de redes, explotación de vulnerabilidades y protección.</p>
+                    </div>
+                </div>
+
+                <!-- 2. El Origen de ARPANET -->
+                <div class="teacher-card" onclick="scrollToDetail('tema2')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_arpanet.jpg" alt="El Origen de ARPANET" >
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">2. El Origen de ARPANET</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">La conmutación de paquetes, redes distribuidas y el primer mensaje transmitido en 1969.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Mito vs. Realidad de ARPANET -->
+                <div class="teacher-card" onclick="scrollToDetail('tema3')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_mito.jpg" alt="Mito vs Realidad" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">3. Mito vs. Realidad de ARPANET</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Ataque nuclear vs. tolerancia a fallos técnicos de los conmutadores primitivos.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Primer Ataque: Creeper vs. Reaper -->
+                <div class="teacher-card" onclick="scrollToDetail('tema4')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_creeper.jpg" alt="Creeper vs Reaper" onerror="this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">4. Primer Ataque: Creeper vs. Reaper</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">El nacimiento del primer gusano experimental y la invención del primer antivirus en 1971.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Flag Day y el Idioma TCP/IP -->
+                <div class="teacher-card" onclick="scrollToDetail('tema5')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_tcpip.jpg" alt="TCP IP y WWW" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">5. Flag Day y el Idioma TCP/IP</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">La estandarización global de 1983 y la llegada posterior de la World Wide Web.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Evolución del Paradigma -->
+                <div class="teacher-card" onclick="scrollToDetail('tema6')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_evolucion.jpg" alt="Evolucion del Paradigma" onerror="this.src='https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">6. Evolución del Paradigma</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">De bromas académicas a virus financieros masivos y ciberguerra de Estados.</p>
+                    </div>
+                </div>
+
+                <!-- 7. El Pentágono de la Seguridad -->
+                <div class="teacher-card" onclick="scrollToDetail('tema7')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_pentagono.jpg" alt="Pentagono de la Seguridad" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">7. El Pentágono de la Seguridad</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Confidencialidad, Integridad, Disponibilidad, Autenticidad y Trazabilidad.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Origen de las Brechas Modernas -->
+                <div class="teacher-card" onclick="scrollToDetail('tema8')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_brechas.jpg" alt="Brechas Modernas" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">8. Brechas Modernas</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Malware automatizado, vulnerabilidades técnicas y el factor humano.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Defensa en Profundidad y Zero Trust -->
+                <div class="teacher-card" onclick="scrollToDetail('tema9')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_zerotrust.jpg" alt="Defensa y Zero Trust" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">9. Defensa y Zero Trust</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Controles defensivos multinivel y la filosofía 'Nunca confíes, siempre verifica'.</p>
+                    </div>
+                </div>
+
+                <!-- 10. El Futuro e IA en Ciberseguridad -->
+                <div class="teacher-card" onclick="scrollToDetail('tema10')" style="background: #ffffff; border: 1px solid #e2e8f0; min-width: 320px;">
+                    <img src="imgsesiones/s1_futuro.jpg" alt="El Futuro e IA" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+                    <div class="teacher-info" style="background: #ffffff; padding: 1.5rem;">
+                        <h3 style="color: #0f172a; margin-bottom: 0.8rem;">10. El Futuro e IA</h3>
+                        <p style="color: #475569; font-size: 0.88rem; line-height: 1.6;">Enfrentamiento de Inteligencias Artificiales, algoritmos cuánticos y responsabilidad del usuario.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DESGLOSE COMPLETO TEMA POR TEMA -->
+    <section class="topics-detail-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Desarrollo Detallado de los Temas</h2>
+                <p>Haz clic sobre cualquier imagen para verla en tamaño completo</p>
+            </div>
+
+            <!-- Tema 1 -->
+            <div class="detail-card" id="tema1">
+                <div class="detail-content">
+                    <h2>1. La Carrera Armamentista Digital</h2>
+                    <p>La ciberseguridad es un ciclo dinámico y continuo conocido como el juego del gato y el ratón. A medida que la tecnología avanza, también lo hacen las vulnerabilidades y los mecanismos necesarios para protegerlas.</p>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Ciclo Fundamental:</h3>
+                            <ul>
+                                <li><strong>1. Creación (Conectividad):</strong> La humanidad inventa una nueva forma de enlazar información (ej. ARPANET, la World Wide Web, redes en la nube).</li>
+                                <li><strong>2. Explotación (Vulnerabilidad):</strong> Actores maliciosos o investigadores descubren cómo usar esa nueva conexión para beneficio propio o daño (virus, intrusiones).</li>
+                                <li><strong>3. Protección (Ciberseguridad):</strong> Se desarrollan escudos, firewalls y políticas para defender la red, obligando a los atacantes a inventar nuevos métodos sofisticados.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_carrera.jpeg')">
+                            <img src="imgsesiones/s1_carrera.jpeg" alt="Carrera Armamentista" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="detail-card" id="tema2">
+                <div class="detail-content">
+                    <h2>2. El Origen de ARPANET: La Red que no Podía Morir</h2>
+                    <p>En 1965, Donald Davies y Paul Baran introdujeron el concepto revolucionario de la <strong>conmutación de paquetes</strong>, el cual fragmenta la información en pequeñas piezas que viajan por rutas distintas a través de una red distribuida.</p>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Tipos de Redes y Primer Mensaje:</h3>
+                            <ul>
+                                <li><strong>Red Centralizada:</strong> Si el nodo central cae, toda la red colapsa.</li>
+                                <li><strong>Red Descentralizada / Distribuida:</strong> Permite múltiples rutas alternativas para garantizar que el mensaje llegue aunque fallen varios nodos.</li>
+                                <li><em>Hito Histórico:</em> El 29 de octubre de 1969 se intentó enviar la palabra "LOGIN" entre UCLA y Stanford. El sistema colapsó tras las dos primeras letras, por lo que el primer mensaje de la historia de Internet fue simplemente <strong>"LO"</strong>.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_arpanet.jpg')">
+                            <img src="imgsesiones/s1_arpanet.jpg" alt="ARPANET y Conmutacion de Paquetes" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="detail-card" id="tema3">
+                <div class="detail-content">
+                    <h2>3. Mito vs. Realidad: ¿Por qué se creó ARPANET?</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <p><strong>El Mito Popular:</strong> Se sostiene comúnmente que ARPANET fue diseñada por el Pentágono exclusivamente para sobrevivir a un ataque nuclear soviético durante la Guerra Fría.</p>
+                            <p><strong>La Realidad Técnica:</strong> La motivación principal era que los equipos informáticos y nodos de conmutación de los años 60 eran sumamente inestables e infiables. La red necesitaba una arquitectura robusta capaz de tolerar fallos técnicos continuos de las máquinas, no necesariamente bombardeos.</p>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_mito.jpg')">
+                            <img src="imgsesiones/s1_mito.jpg" alt="Mito vs Realidad ARPANET" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="detail-card" id="tema4">
+                <div class="detail-content">
+                    <h2>4. Anatomía del Primer Ataque (1971): Creeper vs. Reaper</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>El Nacimiento del Malware y Antivirus:</h3>
+                            <ul>
+                                <li><strong>Creeper (Bob Thomas, 1971):</strong> Un experimento inofensivo diseñado para moverse entre computadoras de la red mostrando el mensaje: <em>"I'M THE CREEPER: CATCH ME IF YOU CAN"</em>.</li>
+                                <li><strong>Reaper (Ray Tomlinson):</strong> Creado poco después con el objetivo de desplazarse por la red, localizar a Creeper y eliminarlo. Este evento marcó el nacimiento oficial del primer software antivirus.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_creeper.jpg')">
+                            <img src="imgsesiones/s1_creeper.jpg" alt="Creeper vs Reaper" onerror="this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="detail-card" id="tema5">
+                <div class="detail-content">
+                    <h2>5. Flag Day y El Lenguaje Universal (1983)</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <p><strong>El Protocolo TCP/IP:</strong> El 1 de enero de 1983 ("Flag Day"), la red migró masivamente al protocolo TCP/IP, desarrollado por Vinton Cerf y Robert Kahn. Este estándar funcionó como un idioma universal que interconectó redes heterogéneas, transformando ARPANET en el esqueleto del Internet global.</p>
+                            <p><strong>La World Wide Web:</strong> Entre 1989 y 1993, Tim Berners-Lee integró el sistema de hipertexto (WWW) y el navegador Mosaic facilitó el acceso público masivo.</p>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_tcpip.jpg')">
+                            <img src="imgsesiones/s1_tcpip.jpg" alt="Flag Day TCP/IP" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 6 -->
+            <div class="detail-card" id="tema6">
+                <div class="detail-content">
+                    <h2>6. La Evolución del Paradigma de las Ciberamenazas</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <ul>
+                                <li><strong>Décadas 1970 - 1980:</strong> Redes académicas/experimentales. Amenazas tipo gusano (Morris Worm) impulsadas por curiosidad o búsqueda de notoriedad. Defensa mediante antivirus elementales.</li>
+                                <li><strong>Décadas 1990 - 2000:</strong> Explosión comercial y Web. Surgimiento de ciberdelitos financieros y virus masivos (Melissa, ILOVEYOU). Defensa mediante Firewalls y normativas.</li>
+                                <li><strong>Décadas 2010 - 2020+:</strong> Entornos en la Nube e IoT. Extorsiones masivas por Ransomware y ciberguerra promovida por Estados. Defensa basada en IA y arquitectura Zero Trust.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_evolucion.jpg')">
+                            <img src="imgsesiones/s1_evolucion.jpg" alt="Evolucion de Amenazas" onerror="this.src='https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 7 -->
+            <div class="detail-card" id="tema7">
+                <div class="detail-content">
+                    <h2>7. ¿Qué Protegemos Realmente? El Pentágono de la Seguridad</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Los 5 Pilares Fundamentales:</h3>
+                            <ul>
+                                <li><strong>Confidencialidad:</strong> Garantiza que la información solo sea accesible por personal autorizado.</li>
+                                <li><strong>Integridad:</strong> Asegura que los datos no hayan sido alterados ni corrompidos.</li>
+                                <li><strong>Disponibilidad:</strong> Asegura el acceso a los sistemas y datos cuando se requieran.</li>
+                                <li><strong>Autenticidad:</strong> Valida que la identidad del emisor o sistema sea legítima.</li>
+                                <li><strong>Trazabilidad (No Repudio):</strong> Permite rastrear las acciones realizadas hacia un usuario de forma inequívoca.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_pentagono.jpg')">
+                            <img src="imgsesiones/s1_pentagono.jpg" alt="El Pentagono de la Seguridad" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 8 -->
+            <div class="detail-card" id="tema8">
+                <div class="detail-content">
+                    <h2>8. El Origen de las Brechas Modernas</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Vectores Principales de Ataque:</h3>
+                            <ul>
+                                <li><strong>Malware:</strong> Software destructivo (Spyware, Troyanos, Ransomware) diseñado para exfiltrar o bloquear datos.</li>
+                                <li><strong>El Factor Humano:</strong> Phishing, mala administración de permisos o contraseñas débiles. Representa el eslabón más vulnerable.</li>
+                                <li><strong>Fallas Técnicas:</strong> Vulnerabilidades de código en el software o fallas físicas en servidores.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_brechas.jpg')">
+                            <img src="imgsesiones/s1_brechas.jpg" alt="Brechas Modernas" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 9 -->
+            <div class="detail-card" id="tema9">
+                <div class="detail-content">
+                    <h2>9. El Escudo Moderno: Defensa en Profundidad y Zero Trust</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <h3>Estrategia Múltiple:</h3>
+                            <ul>
+                                <li><strong>Controles Disuasivos:</strong> Desalientan ataques (políticas, sanciones legales).</li>
+                                <li><strong>Controles Preventivos:</strong> Bloquean amenazas (Firewalls, 2FA).</li>
+                                <li><strong>Controles Detectores:</strong> Identifican intrusiones activas (Sistemas IDS/IPS).</li>
+                                <li><strong>Controles Correctivos:</strong> Mitigan daños tras un evento (Backups offline).</li>
+                                <li><strong>Modelo Zero Trust (Cero Confianza):</strong> Elimina la idea del perímetro seguro interno. Principio: <em>"Nunca confíes, siempre verifica"</em>.</li>
+                            </ul>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_zerotrust.jpg')">
+                            <img src="imgsesiones/s1_zerotrust.jpg" alt="Defensa en Profundidad y Zero Trust" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tema 10 -->
+            <div class="detail-card" id="tema10">
+                <div class="detail-content">
+                    <h2>10. El Futuro e Inteligencia Artificial en Ciberseguridad</h2>
+                    
+                    <div class="subtopic-row">
+                        <div class="subtopic-text">
+                            <p><strong>Nuevos Horizontes:</strong> La IA se emplea simultáneamente para automatizar la creación de malware adaptativo y para implementar respuestas defensivas inmediatas mediante herramientas EDR/XDR. Paralelamente, la industria desarrolla criptografía post-cuántica.</p>
+                            <p><strong>Responsabilidad Compartida:</strong> La tecnología por sí sola resulta insuficiente. La concienciación activa del usuario constituye la capa defensiva definitiva en el entorno personal, educativo y laboral.</p>
+                        </div>
+                        <div class="subtopic-img-container" onclick="openModal('imgsesiones/s1_futuro.jpg')">
+                            <img src="imgsesiones/s1_futuro.jpg" alt="El Futuro e IA" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+                            <span class="zoom-hint">🔍 Clic para agrandar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN CUESTIONARIO AUTOEVALUABLE -->
+    <section class="quiz-section" id="cuestionario">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Cuestionario Autoevaluable: Sesión 1</h2>
+                <p>Evalúa los conocimientos aprendidos sobre la Historia y Fundamentos de la Ciberseguridad.</p>
+            </div>
+
+            <form id="quiz-form">
+                <!-- Pregunta 1 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">1. ¿Cuál fue el avance técnico clave introducido por Paul Baran y Donald Davies que permitió el funcionamiento distribuido de ARPANET?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            La invención de la fibra óptica perimetral.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="10">
+                            La conmutación de paquetes.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            El desarrollo del primer protocolo antivirus.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1" value="0">
+                            La encriptación simétrica mediante clave pública.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">2. ¿Cuál fue la verdadera razón técnica para diseñar la arquitectura distribuida de ARPANET?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p1_2" value="0">
+                            Sobrevivir exclusivamente a un ataque nuclear masivo durante la Guerra Fría.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1_2" value="10">
+                            Tolerar la alta frecuencia de fallas técnicas en los conmutadores y nodos de la época.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1_2" value="0">
+                            Reducir los costos de las llamadas telefónicas de larga distancia.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p1_2" value="0">
+                            Permitir las transmisiones de streaming en tiempo real.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">3. ¿Qué hito histórico representó el programa 'Reaper' creado por Ray Tomlinson en 1971?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            El primer ataque de denegación de servicio (DDoS) a escala comercial.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            El primer firewall basado en hardware para servidores de red.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="10">
+                            El nacimiento del primer software antivirus al buscar y eliminar el programa Creeper.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p3" value="0">
+                            El primer motor de búsqueda web de la historia.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">4. ¿Qué evento técnico ocurrido el 1 de enero de 1983 ("Flag Day") permitió la interconexión de redes heterogéneas?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p4" value="10">
+                            La adopción masiva del protocolo TCP/IP como estándar universal.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p4" value="0">
+                            El lanzamiento oficial del navegador Netscape.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p4" value="0">
+                            La creación del protocolo de correo electrónico SMTP.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p4" value="0">
+                            La privatización total de la infraestructura de ARPANET.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">5. ¿Cuáles de los siguientes pilares forman parte del "Pentágono de la Seguridad"? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p5" value="2.5">
+                            Confidencialidad
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p5" value="2.5">
+                            Integridad
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p5" value="2.5">
+                            Disponibilidad
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p5" value="2.5">
+                            Autenticidad y Trazabilidad
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">6. ¿Qué pilar del Pentágono de la Seguridad garantiza que una transacción o acción realizada en un sistema no pueda ser negada por el usuario que la ejecutó?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            Disponibilidad
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            Confidencialidad
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="10">
+                            Trazabilidad (No Repudio)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p6" value="0">
+                            Redundancia
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">7. ¿Cuál es la premisa fundamental sobre la cual opera el modelo de seguridad 'Zero Trust' (Cero Confianza)?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p7" value="0">
+                            Confiar automáticamente en cualquier dispositivo que se conecte desde la red interna de la oficina.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p7" value="10">
+                            Nunca confíes, siempre verifica, aplicando autenticación constante a cada solicitud de acceso.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p7" value="0">
+                            Bloquear permanentemente el tráfico proveniente de redes Wi-Fi públicas.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p7" value="0">
+                            Sustituir los firewalls tradicionales por copias de seguridad offline.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 (Múltiple) -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">8. En la estrategia de Defensa en Profundidad, ¿cuáles de los siguientes ejemplos corresponden a controles preventivos y correctivos? (Selecciona las correctas)</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="checkbox" name="p8" value="3.33">
+                            Firewalls y autenticación de dos factores (Preventivos).
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p8" value="3.33">
+                            Copias de seguridad restaurables tras un ataque de Ransomware (Correctivos).
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p8" value="3.34">
+                            Sistemas IDS para detectar tráfico anómalo en curso (Detectores).
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="p8" value="0">
+                            Ignorar las políticas de actualización para evitar caídas de servidor.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 9 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">9. ¿Cuál de los siguientes elementos suele considerarse como el eslabón más vulnerable dentro de la cadena de ciberseguridad?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p9" value="0">
+                            Los servidores de bases de datos relacionales SQL.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p9" value="10">
+                            El factor humano (los usuarios y la falta de concienciación sobre ingeniería social).
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p9" value="0">
+                            Los cables submarinos de fibra óptica.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p9" value="0">
+                            Los algoritmos de cifrado simétrico AES.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 10 -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-title">10. ¿De qué manera la Inteligencia Artificial está transformando la ciberseguridad en la década de 2020?</span>
+                        <span class="points-badge">10 puntos</span>
+                    </div>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Eliminando la necesidad de utilizar contraseñas y claves privadas en todos los sistemas.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Garantizando que las redes cibernéticas sean 100% invulnerables a cualquier tipo de ataque.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="10">
+                            Ofreciendo herramientas tanto para automatizar ataques adaptativos como para detectar anomalías y amenazas a velocidad milimétrica.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="p10" value="0">
+                            Sustituyendo por completo la arquitectura de conmutación de paquetes por redes centralizadas.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-quiz">Calcular Evaluación</button>
+            </form>
+
+            <div id="quiz-results" class="quiz-results">
+                <h3 id="score-text">Puntaje: 0 / 100</h3>
+                <p id="feedback-text">Has completado la autoevaluación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE IMAGEN AGRANDADA -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgExpanded" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Script principal global -->
+    <script src="../script.js"></script>
+
+</body>
+</html>
